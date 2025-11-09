@@ -1,0 +1,19 @@
+[external-service-interaction] [http] [info] http://10.10.11.88:8000
+[snmpv3-detect] [javascript] [info] 10.10.11.88:8000 ["Enterprise: unknown"]
+[CVE-2023-37582] [tcp] [critical] 10.10.11.88:8000
+[form-detection] [http] [info] http://10.10.11.88:8000
+[options-method] [http] [info] http://10.10.11.88:8000 ["GET, OPTIONS, HEAD"]
+[addeventlistener-detect] [http] [info] http://10.10.11.88:8000
+[email-extractor] [http] [info] http://10.10.11.88:8000 ["support@imagery.com"]
+[http-missing-security-headers:x-frame-options] [http] [info] http://10.10.11.88:8000
+[http-missing-security-headers:x-content-type-options] [http] [info] http://10.10.11.88:8000
+[http-missing-security-headers:clear-site-data] [http] [info] http://10.10.11.88:8000
+[http-missing-security-headers:cross-origin-resource-policy] [http] [info] http://10.10.11.88:8000
+[http-missing-security-headers:content-security-policy] [http] [info] http://10.10.11.88:8000
+[http-missing-security-headers:x-permitted-cross-domain-policies] [http] [info] http://10.10.11.88:8000
+[http-missing-security-headers:referrer-policy] [http] [info] http://10.10.11.88:8000
+[http-missing-security-headers:cross-origin-embedder-policy] [http] [info] http://10.10.11.88:8000
+[http-missing-security-headers:cross-origin-opener-policy] [http] [info] http://10.10.11.88:8000
+[http-missing-security-headers:strict-transport-security] [http] [info] http://10.10.11.88:8000
+[http-missing-security-headers:permissions-policy] [http] [info] http://10.10.11.88:8000
+[tech-detect:python] [http] [info] http://10.10.11.88:8000
