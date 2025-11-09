@@ -7,6 +7,8 @@ Machine IP: 10.10.11.88
 
 > **Note:** To view images in this walkthrough, copy all PNG files from the main branch root to the `images/` directory, or run: `./copy-images-from-main.sh`
 
+![pwn](images/pwn.png)
+
 ## Initial Enumeration
 Running nmap scan on the target shows the following results:
 ```
