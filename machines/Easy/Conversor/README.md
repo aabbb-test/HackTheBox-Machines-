@@ -8,7 +8,7 @@
 Discover XML converter web application, analyze source code, exploit XSLT injection with malicious .exslt file to gain reverse shell, extract database credentials, crack hash, SSH as user, exploit sudo binary for root flag.
 
 ## Target / Access
-**Target IP:** `<redacted>` (10.10.11.92 in raw logs)  
+**Target IP:** `<redacted>`  
 > Note: IP addresses have been redacted per HTB publishing guidelines.
 
 ---

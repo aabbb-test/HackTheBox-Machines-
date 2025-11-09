@@ -8,7 +8,7 @@
 Discover web application with source code download, identify CVE-2024-28397 vulnerability, exploit to gain reverse shell, extract database credentials, crack hash, SSH as user, exploit sudo npbackup-cli for root flag.
 
 ## Target / Access
-**Target IP:** `<redacted>` (10.10.11.82 in raw logs)  
+**Target IP:** `<redacted>`  
 > Note: IP addresses have been redacted per HTB publishing guidelines.
 
 ---
