@@ -1,3 +1,0 @@
-[missing-sri] [http] [info] http://10.10.11.82:8000 ["https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@400;500;700&display=swap"]
-[external-service-interaction] [http] [info] http://10.10.11.82:8000
-[snmpv3-detect] [javascript] [info] 10.10.11.82:8000 ["Enterprise: unknown"]
