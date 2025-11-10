@@ -1,0 +1,7 @@
+1. we start with an nmap scan
+2. we add ip 10.10.11.92 to /etc/hosts (etc_hosts.png) and going to the website we create and account and then  (site.png) we see xml convertor. we register 
+3. we download the sourcecode (source_code.png) we see the source_code_tree (.png) after analysis of the file we try to create a reverse shell using a malicious exslt file (shell.png), we also need a xml file this can be taken from the namp scan  we also create a nc -lnvp 4444, after loading the exploit we get shell (exploit_done.png)
+4. we stabilize the shell using python3 -c 'import pty; pty.spawn("/bin/bash")';
+5. we start poking around and we see users.db and we get hash from user fismathack (user_hash.png) we crack the pass using hashcat (user_pass.png)
+6. with the password we can ssh and find user_flag
+7. we use sudo -l see a binary we can run without pass as root after doing some research online we see we can execute command to get root flag (root_flag.png)

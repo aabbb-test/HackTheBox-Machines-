@@ -1,6 +1,6 @@
 # Conversor — HTB Walkthrough
 
-![Conversor Machine](conversor.png)
+![Conversor Machine](images/conversor.png)
 
 **Status:** Completed  
 **Difficulty:** Easy  
@@ -38,7 +38,7 @@ nmap -sC -sV -p- 10.10.11.92
 nmap -sC -sV -p- 10.10.11.92 -oX nmap.xml
 ```
 
-**Raw Logs:** [nmap.txt](nmap.txt), [nmap.xml](nmap.xml)
+**Raw Logs:** [nmap.txt](raw-logs/nmap.txt), [nmap.xml](raw-logs/nmap.xml)
 
 **Output Excerpt:**
 ```
@@ -58,7 +58,7 @@ PORT     STATE SERVICE VERSION
 
 **Why save XML format?** The nmap.xml file will be useful later - we can actually use it as part of our attack payload!
 
-![Nmap scan results](nmap.png)
+![Nmap scan results](images/nmap.png)
 
 ### Step 2: Web Application Access
 
@@ -94,11 +94,11 @@ Applications that process user-uploaded files (especially XML/XSLT) are potentia
 - XSLT is a powerful language that can execute code
 - If not properly secured, we might be able to run our own commands
 
-![Hosts file configuration](etc_hosts.png)
+![Hosts file configuration](images/etc_hosts.png)
 
-![Web application interface](site.png)
+![Web application interface](images/site.png)
 
-![Conversor application](conversor.png)
+![Conversor application](images/conversor.png)
 
 ### Step 3: Source Code Analysis
 
@@ -132,9 +132,9 @@ XSLT is not just for formatting - it's a Turing-complete programming language! W
 **Why this matters:**
 Finding that EXSLT extensions are enabled is the key to our attack. We can create a malicious XSLT file that, when processed by the application, will execute commands on the server.
 
-![Source code download](source_code.png)
+![Source code download](images/source_code.png)
 
-![Source code structure](source_code_tree.png)
+![Source code structure](images/source_code_tree.png)
 
 ---
 
@@ -189,14 +189,14 @@ Our file (`shell.exslt`) uses EXSLT extensions to execute Python code:
 
 **Raw Logs:**
 - [shell.exslt](shell.exslt) — Our malicious XSLT payload
-- [nmap.xml](nmap.xml) — XML file (from Step 1)
+- [nmap.xml](raw-logs/nmap.xml) — XML file (from Step 1)
 
-![XSLT injection payload](shell.png)
+![XSLT injection payload](images/shell.png)
 
 **Result:**
 The server processes our files, executes our code, and connects back to our listener. We now have shell access!
 
-![Shell received - Access granted!](exploit_done.png)
+![Shell received - Access granted!](images/exploit_done.png)
 
 ### Step 5: Shell Stabilization
 
@@ -249,7 +249,7 @@ cat /path/to/users.db
 
 **Hash Found:** `5b5c3ac3a1c897c94caad48e6c71fdec`
 
-![User hash in database](user_hash.png)
+![User hash in database](images/user_hash.png)
 
 ### Step 7: Password Cracking
 
@@ -260,7 +260,7 @@ hashcat -m 0 hash.txt /usr/share/wordlists/rockyou.txt
 
 **Result:** Password successfully cracked: `fismathack123`
 
-![Password cracking result](user_pass.png)
+![Password cracking result](images/user_pass.png)
 
 ### Step 8: SSH Access and User Flag
 
@@ -272,7 +272,7 @@ cat ~/user.txt
 
 **Output:** User flag captured.
 
-![User flag](user_flag.png)
+![User flag](images/user_flag.png)
 
 ---
 
@@ -305,7 +305,7 @@ sudo /path/to/binary [parameters to execute cat /root/root.txt]
 
 **Output:** Root flag successfully obtained.
 
-![Root flag capture](root_flag.png)
+![Root flag capture](images/root_flag.png)
 
 ---
 

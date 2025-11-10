@@ -1,0 +1,7 @@
+# Dirsearch started Thu Nov  6 09:41:54 2025 as: /usr/lib/python3/dist-packages/dirsearch/dirsearch.py -u http://10.10.11.82:8000
+
+302   199B   http://10.10.11.82:8000/dashboard    -> REDIRECTS TO: /login
+200    10KB  http://10.10.11.82:8000/download
+200   667B   http://10.10.11.82:8000/login
+302   189B   http://10.10.11.82:8000/logout    -> REDIRECTS TO: /
+200   651B   http://10.10.11.82:8000/register
