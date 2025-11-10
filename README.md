@@ -3,17 +3,16 @@
 This repository contains writeups and imagery for HackTheBox machines you've completed.
 
 Structure
-- machines/<difficulty>/<machine-name>/README.md — machine walkthrough
-- machines/<difficulty>/<machine-name>/images/ — screenshots and images
-- machines/<difficulty>/<machine-name>/raw-logs/ — raw textual logs (nmap, gobuster, exploit output)
-- templates/writeup-template.md — template to create new writeups
-- .github/workflows/generate-writeup.yml — optional automation that generates writeups from raw-logs
+- <machine-name>/README.md — machine walkthrough
+- <machine-name>/images/ — screenshots and images
+- <machine-name>/raw-logs/ — raw textual logs (nmap, gobuster, exploit output, PDFs)
+- tools/convert_pdf_to_md.py — script to convert PDF writeups to markdown format
 
 Workflow
-1. Create a folder for a machine under machines/Medium/<MachineName>
-2. Put textual logs into machines/Medium/<MachineName>/raw-logs/ (nmap.txt, gobuster.txt, etc.)
-3. Put screenshots into machines/Medium/<MachineName>/images/
-4. If you want automatic generation, push files and the Action will attempt to generate a first-draft README.md for the machine using the template (requires API key secret; manual review recommended).
+1. Create a folder for a machine (e.g., MachineName/)
+2. Put textual logs into MachineName/raw-logs/ (nmap.txt, gobuster.txt, document.pdf, etc.)
+3. Put screenshots into MachineName/images/
+4. Create or generate a README.md with the machine walkthrough
 
 Security / publishing
 - Only publish machines you are allowed to publish (HTB policy). Remove or redact any sensitive credentials before committing.
