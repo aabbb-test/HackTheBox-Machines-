@@ -1,0 +1,130 @@
+# HackNet HTB - Penetration Test Notes
+Target IP: 10.129.232.4
+Hostname: hacknet.htb
+
+## Initial Reconnaissance
+- SSH (22/tcp): OpenSSH 9.2p1 Debian
+- HTTP (80/tcp): nginx 1.22.1
+
+## Web Application
+- Redirects to http://hacknet.htb/
+- Created test account:
+  - Email: hack@hacker.com
+  - Password: hacker
+
+
+## User Enumeration (IDOR - Successful!)
+Found 20+ users via /profile/{id}:
+1: cyberghost, 2: hexhunter, 3: rootbreaker, 4: zero_day
+5: cryptoraven, 6: shadowcaster, 7: blackhat_wolf, 8: bytebandit
+9: glitch, 10: datadive, 11: phreaker, 12: codebreaker
+13: netninja, 14: packetpirate, 15: darkseeker, 16: shadowmancer
+17: trojanhorse, 18: backdoor_bandit, 19: exploit_wizard, 20: stealth_hawk
+(More users exist - saw profile/24 in search)
+
+## Attack Surface:
+✅ User enumeration via /profile/{id} - No access control
+✅ Search works - returns user profiles
+❌ /media directory - 403 Forbidden (no listing)
+
+
+## Valid SSH Credentials Found!
+Username: mikey
+Password: mYd4rks1dEisH3re
+
+SSH Command: ssh mikey@10.129.232.4
+
+
+## User Flag Obtained!
+Flag: b2e0413c7f9daf1f3008edc3c0d1ffdd
+User: mikey
+Location: /home/mikey/user.txt
+
+## Next Step: Privilege Escalation
+Need to enumerate for root access.
+
+
+## Privilege Escalation Status
+
+### Found:
+- MySQL: sandy:h@ckn3tDBpa$$  
+- System user 'sandy' exists (uid=1001)
+- GPG encrypted backups in /var/www/HackNet/backups/
+  - backup01.sql.gpg
+  - backup02.sql.gpg  
+  - backup03.sql.gpg
+  - Encrypted with RSA public key (need private key)
+  
+### Tried:
+- ❌ MySQL password doesn't work for SSH/su to sandy
+- ❌ All 26 extracted web passwords don't work for sandy
+- ❌ No GPG private keys found accessible to mikey
+- ❌ No sudo access for mikey
+- ❌ Standard SUID binaries only
+
+### Next Steps:
+- Need to find sandy's SSH/system password OR
+- Need to find GPG private key to decrypt backups OR
+- Find another privilege escalation vector
+
+
+## Privilege Escalation - Solution Found!
+
+### Django Cache Pickle RCE:
+- Exploited file-based cache deserialization
+- Gained RCE as www-data (sandy group)
+- Copied GPG private key from /home/sandy/.gnupg/
+
+### GPG Key Decryption:
+- GPG passphrase: sweetheart (cracked with john)
+- Decrypted backup02.sql.gpg
+- Found MySQL root password in messages table
+
+### MySQL Root Access:
+- MySQL root password: h4ck3rs4re3veRywh3re99
+- Can write files anywhere (secure_file_priv=NULL)
+- Next: Use MySQL to escalate to root
+
+
+## ROOT FLAG OBTAINED! ✅
+
+### Final Privilege Escalation:
+- Used MySQL root password: h4ck3rs4re3veRywh3re99
+- Escalated to root via MySQL
+- Root Flag: 132d03b6361e83f2b6e0670ec88ad1b4
+
+## Complete Attack Chain Summary:
+
+1. **Initial Access:**
+   - SSTI in Django username field ({{ users.values }})
+   - Extracted 26 user credentials from database
+   - SSH as mikey with password: mYd4rks1dEisH3re
+   - User Flag: b2e0413c7f9daf1f3008edc3c0d1ffdd
+
+2. **Privilege Escalation:**
+   - Django Cache Pickle Deserialization RCE
+   - Exploited world-writable /var/tmp/django_cache
+   - Gained code execution as www-data (sandy group)
+   - Copied GPG private key from /home/sandy/.gnupg/
+   - Cracked GPG passphrase: sweetheart
+   - Decrypted backup02.sql.gpg
+   - Found MySQL root password in messages: h4ck3rs4re3veRywh3re99
+   - Used MySQL root access to escalate to system root
+   - Root Flag: 132d03b6361e83f2b6e0670ec88ad1b4
+
+## Key Vulnerabilities Exploited:
+1. Django SSTI in username field
+2. Insecure pickle deserialization in file-based cache
+3. World-writable cache directory (drwxrwxrwx)
+4. GPG private key accessible to www-data group
+5. Weak GPG passphrase (in rockyou.txt)
+6. Sensitive data in database backups
+7. MySQL root access enabling system privilege escalation
+
+## Tools & Scripts Created:
+- extract_credentials.py (Django SSTI credential extraction)
+- test_ssh_credentials.py (SSH credential validation)
+- django_rce.py (Django cache pickle RCE)
+- Various helper scripts
+
+MACHINE PWNED! 🎉

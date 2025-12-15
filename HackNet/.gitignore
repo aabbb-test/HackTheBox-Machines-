@@ -1,0 +1,32 @@
+# HackNet HTB - Git Ignore File
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+*.bak
+*~
+
+# Working files (not needed for repository)
+working_files/
+
+# SSTI test results
+ssti_results/
+

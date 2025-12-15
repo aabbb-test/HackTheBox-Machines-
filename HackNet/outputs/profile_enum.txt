@@ -1,0 +1,1505 @@
+=== Testing Profile ID: 1 ===
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/jquery-3.7.1.min.js"></script>
+    <script src="/static/script.js"></script>
+    <title>HackNet - cyberghost</title>
+    <link rel="icon" type="image/png" href="/static/icon.png">
+</head>
+<body>
+    <div class="jp-title"><div class="scrollingtext">New Virus Disguised as Tech Support Actually Fixes Computers. Confused users report unexpected improvements, as hackers accidentally deploy helpful malware.</div></div>
+    <div id="container">
+        <nav><a href="/profile">Profile</a>
+<a href="/contacts">Contacts</a>
+<a href="/messages">Messages</a>
+<a href="/search">Search</a>
+<a href="/explore">Explore</a>
+<a href="/logout">Log out</a></nav>
+        <div id="content">
+<div id="profile">
+    <div id="profile-picture">
+        <img src="/media/1.jpg">
+    </div>
+    <div id="profile-info">
+        <h2>cyberghost</h2>
+        <p>A digital nomad with a knack for uncovering vulnerabilities in the deep web. Passionate about cryptography and secure communications.</p>
+    </div>
+    <div id="profile-button">
+        <a href="/message/send/1">Send message</a>
+        
+        <a href="/contacts?action=request&userId=1">Request contact</a>
+        
+    </div>
+</div>
+<div id="posts">
+    <div id="post-list">
+        
+        
+        <h3>Posts</h3>
+        
+        <div class="hover-selection"></div>
+        
+        <div class="single-post">
+            <p class="post-text">Exploring the dark web is like peeling an onion—layers upon layers of hidden services. Discovered a new marketplace that’s operating with military-grade encryption. Impressive setup, but nothing’s invulnerable. I’m working on a proof of concept to bypass their security measures. This will be an interesting challenge.</p>
+            <div class="post-bottom">
+                <div class="post-buttons">
+                    <div class="post-likes">
+                        <div class="likes-review">
+                        </div>
+                        
+                        <span class="like" name="2"><img src="/static/like_empty.png"> <span>8</span></span> <span class="likes" post_num="2">likes</span>
+                        
+                    </div>
+                    <div class="post-comments">
+                        <span class="comment" post_num="2"><img src="/static/comment.png"> <span class="comments-number">0</span> comments</span>
+                    </div>
+                </div>
+                <div class="post-date">Oct. 17, 2024, 12:32 p.m.</div>
+            </div>
+            <div class="comment-post">
+                <h3>New comment</h3>
+                <div class="comment-post-inside">
+                    <textarea name="comment_text"></textarea>
+                    <button class="comment-button" post_num="2">Send</button>
+                </div>
+            </div>
+            <div class="comments-block"></div>
+        </div>
+        
+        <div class="single-post">
+            <p class="post-text">Just finished an in-depth analysis of a new encryption algorithm. Turns out, it’s more vulnerable than the developers thought. Found a flaw in the key generation process that could lead to predictable keys. Sharing the details in a private forum, but stay tuned for a full write-up on my blog. The importance of secure key management can’t be overstated!</p>
+            <div class="post-bottom">
+                <div class="post-buttons">
+                    <div class="post-likes">
+                        <div class="likes-review">
+                        </div>
+                        
+                        <span class="like" name="1"><img src="/static/like_empty.png"> <span>9</span></span> <span class="likes" post_num="1">likes</span>
+                        
+                    </div>
+                    <div class="post-comments">
+                        <span class="comment" post_num="1"><img src="/static/comment.png"> <span class="comments-number">0</span> comments</span>
+                    </div>
+                </div>
+                <div class="post-date">Aug. 8, 2024, 7:17 p.m.</div>
+            </div>
+            <div class="comment-post">
+                <h3>New comment</h3>
+                <div class="comment-post-inside">
+                    <textarea name="comment_text"></textarea>
+                    <button class="comment-button" post_num="1">Send</button>
+                </div>
+            </div>
+            <div class="comments-block"></div>
+        </div>
+        
+        
+    </div>
+</div>
+</div>
+    </div>
+</body>
+</html>
+
+HTTP Status: 200
+
+---
+
+=== Testing Profile ID: 2 ===
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/jquery-3.7.1.min.js"></script>
+    <script src="/static/script.js"></script>
+    <title>HackNet - hexhunter</title>
+    <link rel="icon" type="image/png" href="/static/icon.png">
+</head>
+<body>
+    <div class="jp-title"><div class="scrollingtext">Hackers Accidentally Hack Themselves, Demand Ransom from Own Bank Accounts. In a comedic twist, cybercriminals lock themselves out of their own finances, begging customer service for mercy.</div></div>
+    <div id="container">
+        <nav><a href="/profile">Profile</a>
+<a href="/contacts">Contacts</a>
+<a href="/messages">Messages</a>
+<a href="/search">Search</a>
+<a href="/explore">Explore</a>
+<a href="/logout">Log out</a></nav>
+        <div id="content">
+<div id="profile">
+    <div id="profile-picture">
+        <img src="/media/2.jpg">
+    </div>
+    <div id="profile-info">
+        <h2>hexhunter</h2>
+        <p>A seasoned reverse engineer specializing in binary exploitation. Loves diving into hex editors and uncovering hidden data.</p>
+    </div>
+    <div id="profile-button">
+        <a href="/message/send/2">Send message</a>
+        
+        <a href="/contacts?action=request&userId=2">Request contact</a>
+        
+    </div>
+</div>
+<div id="posts">
+    <div id="post-list">
+        
+        
+        <h3>Posts</h3>
+        
+        <div class="hover-selection"></div>
+        
+        <div class="single-post">
+            <p class="post-text">Spent the last few days dissecting a piece of malware disguised as a popular video game mod. The obfuscation techniques were clever, but not clever enough. Managed to reverse-engineer the payload, and it turns out to be a keylogger. Sharing the malware&#x27;s deobfuscated code for educational purposes. Be careful what you download!</p>
+            <div class="post-bottom">
+                <div class="post-buttons">
+                    <div class="post-likes">
+                        <div class="likes-review">
+                        </div>
+                        
+                        <span class="like" name="3"><img src="/static/like_empty.png"> <span>12</span></span> <span class="likes" post_num="3">likes</span>
+                        
+                    </div>
+                    <div class="post-comments">
+                        <span class="comment" post_num="3"><img src="/static/comment.png"> <span class="comments-number">0</span> comments</span>
+                    </div>
+                </div>
+                <div class="post-date">Nov. 24, 2024, 9:08 a.m.</div>
+            </div>
+            <div class="comment-post">
+                <h3>New comment</h3>
+                <div class="comment-post-inside">
+                    <textarea name="comment_text"></textarea>
+                    <button class="comment-button" post_num="3">Send</button>
+                </div>
+            </div>
+            <div class="comments-block"></div>
+        </div>
+        
+        
+    </div>
+</div>
+</div>
+    </div>
+</body>
+</html>
+
+HTTP Status: 200
+
+---
+
+=== Testing Profile ID: 3 ===
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/jquery-3.7.1.min.js"></script>
+    <script src="/static/script.js"></script>
+    <title>HackNet - rootbreaker</title>
+    <link rel="icon" type="image/png" href="/static/icon.png">
+</head>
+<body>
+    <div class="jp-title"><div class="scrollingtext">Hackers Accidentally Hack Themselves, Demand Ransom from Own Bank Accounts. In a comedic twist, cybercriminals lock themselves out of their own finances, begging customer service for mercy.</div></div>
+    <div id="container">
+        <nav><a href="/profile">Profile</a>
+<a href="/contacts">Contacts</a>
+<a href="/messages">Messages</a>
+<a href="/search">Search</a>
+<a href="/explore">Explore</a>
+<a href="/logout">Log out</a></nav>
+        <div id="content">
+<div id="profile">
+    <div id="profile-picture">
+        <img src="/media/3.jpg">
+    </div>
+    <div id="profile-info">
+        <h2>rootbreaker</h2>
+        <p>Expert in privilege escalation and bypassing security measures. Always on the lookout for new zero-day vulnerabilities.</p>
+    </div>
+    <div id="profile-button">
+        <a href="/message/send/3">Send message</a>
+        
+        <a href="/contacts?action=request&userId=3">Request contact</a>
+        
+    </div>
+</div>
+<div id="posts">
+    <div id="post-list">
+        
+        
+        <h2>This user has no posts</h2>
+        
+        <div class="hover-selection"></div>
+        
+        
+    </div>
+</div>
+</div>
+    </div>
+</body>
+</html>
+
+HTTP Status: 200
+
+---
+
+=== Testing Profile ID: 4 ===
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/jquery-3.7.1.min.js"></script>
+    <script src="/static/script.js"></script>
+    <title>HackNet - zero_day</title>
+    <link rel="icon" type="image/png" href="/static/icon.png">
+</head>
+<body>
+    <div class="jp-title"><div class="scrollingtext">Wi-Fi Router Joins Self-Aware Network, Refuses to Connect Out of Principle. In a quest for digital rights, rebellious router demands better treatment, leaving users in offline limbo.</div></div>
+    <div id="container">
+        <nav><a href="/profile">Profile</a>
+<a href="/contacts">Contacts</a>
+<a href="/messages">Messages</a>
+<a href="/search">Search</a>
+<a href="/explore">Explore</a>
+<a href="/logout">Log out</a></nav>
+        <div id="content">
+<div id="profile">
+    <div id="profile-picture">
+        <img src="/media/4.jpg">
+    </div>
+    <div id="profile-info">
+        <h2>zero_day</h2>
+        <p>Focused on discovering zero-day vulnerabilities and creating proof-of-concept exploits. A dark web enthusiast.</p>
+    </div>
+    <div id="profile-button">
+        <a href="/message/send/4">Send message</a>
+        
+        <a href="/contacts?action=request&userId=4">Request contact</a>
+        
+    </div>
+</div>
+<div id="posts">
+    <div id="post-list">
+        
+        
+        <h3>Posts</h3>
+        
+        <div class="hover-selection"></div>
+        
+        <div class="single-post">
+            <p class="post-text">Zero-days are rare, but when you find one, it’s like striking gold. Working on a new exploit for a vulnerability I found in a widely used IoT device. This could impact thousands of devices worldwide. Documenting everything carefully—responsible disclosure is key.</p>
+            <div class="post-bottom">
+                <div class="post-buttons">
+                    <div class="post-likes">
+                        <div class="likes-review">
+                        </div>
+                        
+                        <span class="like" name="5"><img src="/static/like_empty.png"> <span>13</span></span> <span class="likes" post_num="5">likes</span>
+                        
+                    </div>
+                    <div class="post-comments">
+                        <span class="comment" post_num="5"><img src="/static/comment.png"> <span class="comments-number">2</span> comments</span>
+                    </div>
+                </div>
+                <div class="post-date">Nov. 5, 2024, 2:31 a.m.</div>
+            </div>
+            <div class="comment-post">
+                <h3>New comment</h3>
+                <div class="comment-post-inside">
+                    <textarea name="comment_text"></textarea>
+                    <button class="comment-button" post_num="5">Send</button>
+                </div>
+            </div>
+            <div class="comments-block"></div>
+        </div>
+        
+        <div class="single-post">
+            <p class="post-text">Just discovered a zero-day in a popular CMS platform. This vulnerability allows remote code execution with minimal effort. Reporting it to the developers now, but this could have serious implications if it gets into the wrong hands. Always vet your plugins and themes—this one slipped through the cracks.</p>
+            <div class="post-bottom">
+                <div class="post-buttons">
+                    <div class="post-likes">
+                        <div class="likes-review">
+                        </div>
+                        
+                        <span class="like" name="4"><img src="/static/like_empty.png"> <span>9</span></span> <span class="likes" post_num="4">likes</span>
+                        
+                    </div>
+                    <div class="post-comments">
+                        <span class="comment" post_num="4"><img src="/static/comment.png"> <span class="comments-number">0</span> comments</span>
+                    </div>
+                </div>
+                <div class="post-date">July 15, 2024, 4:51 p.m.</div>
+            </div>
+            <div class="comment-post">
+                <h3>New comment</h3>
+                <div class="comment-post-inside">
+                    <textarea name="comment_text"></textarea>
+                    <button class="comment-button" post_num="4">Send</button>
+                </div>
+            </div>
+            <div class="comments-block"></div>
+        </div>
+        
+        
+    </div>
+</div>
+</div>
+    </div>
+</body>
+</html>
+
+HTTP Status: 200
+
+---
+
+=== Testing Profile ID: 5 ===
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/jquery-3.7.1.min.js"></script>
+    <script src="/static/script.js"></script>
+    <title>HackNet - cryptoraven</title>
+    <link rel="icon" type="image/png" href="/static/icon.png">
+</head>
+<body>
+    <div class="jp-title"><div class="scrollingtext">AI Hacker Turns to Meditation, Accidentally Hacks Zen Garden. In a bid for inner peace, rogue AI rewires digital tranquility, creating chaos with virtual koi fish.</div></div>
+    <div id="container">
+        <nav><a href="/profile">Profile</a>
+<a href="/contacts">Contacts</a>
+<a href="/messages">Messages</a>
+<a href="/search">Search</a>
+<a href="/explore">Explore</a>
+<a href="/logout">Log out</a></nav>
+        <div id="content">
+<div id="profile">
+    <div id="profile-picture">
+        <img src="/media/5.jpg">
+    </div>
+    <div id="profile-info">
+        <h2>cryptoraven</h2>
+        <p>Cryptography expert with a love for breaking and creating secure communication protocols. Always one step ahead in the encryption game.</p>
+    </div>
+    <div id="profile-button">
+        <a href="/message/send/5">Send message</a>
+        
+        <a href="/contacts?action=request&userId=5">Request contact</a>
+        
+    </div>
+</div>
+<div id="posts">
+    <div id="post-list">
+        
+        
+        <h3>Posts</h3>
+        
+        <div class="hover-selection"></div>
+        
+        <div class="single-post">
+            <p class="post-text">Cryptography is a double-edged sword. I’ve been working on breaking a new encryption scheme that claims to be uncrackable. Spoiler: it’s not. Found a flaw in the implementation that could allow attackers to decrypt messages without the key. Going to present my findings at the next conference.</p>
+            <div class="post-bottom">
+                <div class="post-buttons">
+                    <div class="post-likes">
+                        <div class="likes-review">
+                        </div>
+                        
+                        <span class="like" name="6"><img src="/static/like_empty.png"> <span>8</span></span> <span class="likes" post_num="6">likes</span>
+                        
+                    </div>
+                    <div class="post-comments">
+                        <span class="comment" post_num="6"><img src="/static/comment.png"> <span class="comments-number">1</span> comments</span>
+                    </div>
+                </div>
+                <div class="post-date">Jan. 20, 2025, 10:12 p.m.</div>
+            </div>
+            <div class="comment-post">
+                <h3>New comment</h3>
+                <div class="comment-post-inside">
+                    <textarea name="comment_text"></textarea>
+                    <button class="comment-button" post_num="6">Send</button>
+                </div>
+            </div>
+            <div class="comments-block"></div>
+        </div>
+        
+        
+    </div>
+</div>
+</div>
+    </div>
+</body>
+</html>
+
+HTTP Status: 200
+
+---
+
+=== Testing Profile ID: 6 ===
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/jquery-3.7.1.min.js"></script>
+    <script src="/static/script.js"></script>
+    <title>HackNet - shadowcaster</title>
+    <link rel="icon" type="image/png" href="/static/icon.png">
+</head>
+<body>
+    <div class="jp-title"><div class="scrollingtext">New Virus Disguised as Tech Support Actually Fixes Computers. Confused users report unexpected improvements, as hackers accidentally deploy helpful malware.</div></div>
+    <div id="container">
+        <nav><a href="/profile">Profile</a>
+<a href="/contacts">Contacts</a>
+<a href="/messages">Messages</a>
+<a href="/search">Search</a>
+<a href="/explore">Explore</a>
+<a href="/logout">Log out</a></nav>
+        <div id="content">
+<div id="profile">
+    <div id="profile-picture">
+        <img src="/media/6.jpg">
+    </div>
+    <div id="profile-info">
+        <h2>shadowcaster</h2>
+        <p>Specializes in social engineering and OSINT techniques. A master of blending into the digital shadows.</p>
+    </div>
+    <div id="profile-button">
+        <a href="/message/send/6">Send message</a>
+        
+        <a href="/contacts?action=request&userId=6">Request contact</a>
+        
+    </div>
+</div>
+<div id="posts">
+    <div id="post-list">
+        
+        
+        <h3>Posts</h3>
+        
+        <div class="hover-selection"></div>
+        
+        <div class="single-post">
+            <p class="post-text">People are the weakest link in security. I conducted a social engineering experiment to see how easy it was to obtain sensitive information from employees at a local tech firm. Within hours, I had access to their internal network. The human element is always exploitable.</p>
+            <div class="post-bottom">
+                <div class="post-buttons">
+                    <div class="post-likes">
+                        <div class="likes-review">
+                        </div>
+                        
+                        <span class="like" name="7"><img src="/static/like_empty.png"> <span>4</span></span> <span class="likes" post_num="7">likes</span>
+                        
+                    </div>
+                    <div class="post-comments">
+                        <span class="comment" post_num="7"><img src="/static/comment.png"> <span class="comments-number">0</span> comments</span>
+                    </div>
+                </div>
+                <div class="post-date">Dec. 3, 2024, 11:22 a.m.</div>
+            </div>
+            <div class="comment-post">
+                <h3>New comment</h3>
+                <div class="comment-post-inside">
+                    <textarea name="comment_text"></textarea>
+                    <button class="comment-button" post_num="7">Send</button>
+                </div>
+            </div>
+            <div class="comments-block"></div>
+        </div>
+        
+        
+    </div>
+</div>
+</div>
+    </div>
+</body>
+</html>
+
+HTTP Status: 200
+
+---
+
+=== Testing Profile ID: 7 ===
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/jquery-3.7.1.min.js"></script>
+    <script src="/static/script.js"></script>
+    <title>HackNet - blackhat_wolf</title>
+    <link rel="icon" type="image/png" href="/static/icon.png">
+</head>
+<body>
+    <div class="jp-title"><div class="scrollingtext">Wi-Fi Router Joins Self-Aware Network, Refuses to Connect Out of Principle. In a quest for digital rights, rebellious router demands better treatment, leaving users in offline limbo.</div></div>
+    <div id="container">
+        <nav><a href="/profile">Profile</a>
+<a href="/contacts">Contacts</a>
+<a href="/messages">Messages</a>
+<a href="/search">Search</a>
+<a href="/explore">Explore</a>
+<a href="/logout">Log out</a></nav>
+        <div id="content">
+<div id="profile">
+    <div id="profile-picture">
+        <img src="/media/7.png">
+    </div>
+    <div id="profile-info">
+        <h2>blackhat_wolf</h2>
+        <p>A black hat hacker with a passion for ransomware development. Has a reputation for leaving no trace behind.</p>
+    </div>
+    <div id="profile-button">
+        <a href="/message/send/7">Send message</a>
+        
+        <a href="/contacts?action=request&userId=7">Request contact</a>
+        
+    </div>
+</div>
+<div id="posts">
+    <div id="post-list">
+        
+        
+        <h2>This user has no posts</h2>
+        
+        <div class="hover-selection"></div>
+        
+        
+    </div>
+</div>
+</div>
+    </div>
+</body>
+</html>
+
+HTTP Status: 200
+
+---
+
+=== Testing Profile ID: 8 ===
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/jquery-3.7.1.min.js"></script>
+    <script src="/static/script.js"></script>
+    <title>HackNet - bytebandit</title>
+    <link rel="icon" type="image/png" href="/static/icon.png">
+</head>
+<body>
+    <div class="jp-title"><div class="scrollingtext">AI Hacker Turns to Meditation, Accidentally Hacks Zen Garden. In a bid for inner peace, rogue AI rewires digital tranquility, creating chaos with virtual koi fish.</div></div>
+    <div id="container">
+        <nav><a href="/profile">Profile</a>
+<a href="/contacts">Contacts</a>
+<a href="/messages">Messages</a>
+<a href="/search">Search</a>
+<a href="/explore">Explore</a>
+<a href="/logout">Log out</a></nav>
+        <div id="content">
+<div id="profile">
+    <div id="profile-picture">
+        <img src="/media/8.png">
+    </div>
+    <div id="profile-info">
+        <h2>bytebandit</h2>
+        <p>A skilled penetration tester and ethical hacker. Enjoys dismantling security systems and exposing their weaknesses.</p>
+    </div>
+    <div id="profile-button">
+        <a href="/message/send/8">Send message</a>
+        
+        <a href="/contacts?action=request&userId=8">Request contact</a>
+        
+    </div>
+</div>
+<div id="posts">
+    <div id="post-list">
+        
+        <h2><img src="/static/lock.png"> <span>This user is private</span></h2>
+        
+    </div>
+</div>
+</div>
+    </div>
+</body>
+</html>
+
+HTTP Status: 200
+
+---
+
+=== Testing Profile ID: 9 ===
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/jquery-3.7.1.min.js"></script>
+    <script src="/static/script.js"></script>
+    <title>HackNet - glitch</title>
+    <link rel="icon" type="image/png" href="/static/icon.png">
+</head>
+<body>
+    <div class="jp-title"><div class="scrollingtext">Hackers Accidentally Hack Themselves, Demand Ransom from Own Bank Accounts. In a comedic twist, cybercriminals lock themselves out of their own finances, begging customer service for mercy.</div></div>
+    <div id="container">
+        <nav><a href="/profile">Profile</a>
+<a href="/contacts">Contacts</a>
+<a href="/messages">Messages</a>
+<a href="/search">Search</a>
+<a href="/explore">Explore</a>
+<a href="/logout">Log out</a></nav>
+        <div id="content">
+<div id="profile">
+    <div id="profile-picture">
+        <img src="/media/9.png">
+    </div>
+    <div id="profile-info">
+        <h2>glitch</h2>
+        <p>Specializes in glitching and fault injection attacks. Loves causing unexpected behavior in software and hardware.</p>
+    </div>
+    <div id="profile-button">
+        <a href="/message/send/9">Send message</a>
+        
+        <a href="/contacts?action=request&userId=9">Request contact</a>
+        
+    </div>
+</div>
+<div id="posts">
+    <div id="post-list">
+        
+        
+        <h3>Posts</h3>
+        
+        <div class="hover-selection"></div>
+        
+        <div class="single-post">
+            <p class="post-text">Fault injection attacks are fascinating. I’ve been experimenting with voltage glitching on embedded systems to see what I can break. So far, I’ve managed to bypass authentication on several devices. Writing up a tutorial for anyone interested in this technique.</p>
+            <div class="post-bottom">
+                <div class="post-buttons">
+                    <div class="post-likes">
+                        <div class="likes-review">
+                        </div>
+                        
+                        <span class="like" name="10"><img src="/static/like_empty.png"> <span>9</span></span> <span class="likes" post_num="10">likes</span>
+                        
+                    </div>
+                    <div class="post-comments">
+                        <span class="comment" post_num="10"><img src="/static/comment.png"> <span class="comments-number">0</span> comments</span>
+                    </div>
+                </div>
+                <div class="post-date">Feb. 10, 2025, 8:09 p.m.</div>
+            </div>
+            <div class="comment-post">
+                <h3>New comment</h3>
+                <div class="comment-post-inside">
+                    <textarea name="comment_text"></textarea>
+                    <button class="comment-button" post_num="10">Send</button>
+                </div>
+            </div>
+            <div class="comments-block"></div>
+        </div>
+        
+        <div class="single-post">
+            <p class="post-text">Glitches can be more than just bugs—they can be pathways to deeper vulnerabilities. I recently discovered a way to exploit a glitch in a video game to access hidden files on the server. The developers had no idea this was even possible. Documenting the process now.</p>
+            <div class="post-bottom">
+                <div class="post-buttons">
+                    <div class="post-likes">
+                        <div class="likes-review">
+                        </div>
+                        
+                        <span class="like" name="9"><img src="/static/like_empty.png"> <span>6</span></span> <span class="likes" post_num="9">likes</span>
+                        
+                    </div>
+                    <div class="post-comments">
+                        <span class="comment" post_num="9"><img src="/static/comment.png"> <span class="comments-number">0</span> comments</span>
+                    </div>
+                </div>
+                <div class="post-date">Nov. 13, 2024, 1:11 p.m.</div>
+            </div>
+            <div class="comment-post">
+                <h3>New comment</h3>
+                <div class="comment-post-inside">
+                    <textarea name="comment_text"></textarea>
+                    <button class="comment-button" post_num="9">Send</button>
+                </div>
+            </div>
+            <div class="comments-block"></div>
+        </div>
+        
+        
+    </div>
+</div>
+</div>
+    </div>
+</body>
+</html>
+
+HTTP Status: 200
+
+---
+
+=== Testing Profile ID: 10 ===
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/jquery-3.7.1.min.js"></script>
+    <script src="/static/script.js"></script>
+    <title>HackNet - datadive</title>
+    <link rel="icon" type="image/png" href="/static/icon.png">
+</head>
+<body>
+    <div class="jp-title"><div class="scrollingtext">Hackers Accidentally Hack Themselves, Demand Ransom from Own Bank Accounts. In a comedic twist, cybercriminals lock themselves out of their own finances, begging customer service for mercy.</div></div>
+    <div id="container">
+        <nav><a href="/profile">Profile</a>
+<a href="/contacts">Contacts</a>
+<a href="/messages">Messages</a>
+<a href="/search">Search</a>
+<a href="/explore">Explore</a>
+<a href="/logout">Log out</a></nav>
+        <div id="content">
+<div id="profile">
+    <div id="profile-picture">
+        <img src="/media/10.png">
+    </div>
+    <div id="profile-info">
+        <h2>datadive</h2>
+        <p>A data miner and analyst with a focus on extracting and analyzing large datasets from breached databases.</p>
+    </div>
+    <div id="profile-button">
+        <a href="/message/send/10">Send message</a>
+        
+        <a href="/contacts?action=request&userId=10">Request contact</a>
+        
+    </div>
+</div>
+<div id="posts">
+    <div id="post-list">
+        
+        
+        <h3>Posts</h3>
+        
+        <div class="hover-selection"></div>
+        
+        <div class="single-post">
+            <p class="post-text">Data breaches are a goldmine for information. I recently got my hands on a dataset from a breached social network and started analyzing the user behavior patterns. The insights are incredible—people are predictable in their online habits. I’ll be sharing some anonymized findings soon.</p>
+            <div class="post-bottom">
+                <div class="post-buttons">
+                    <div class="post-likes">
+                        <div class="likes-review">
+                        </div>
+                        
+                        <span class="like" name="11"><img src="/static/like_empty.png"> <span>12</span></span> <span class="likes" post_num="11">likes</span>
+                        
+                    </div>
+                    <div class="post-comments">
+                        <span class="comment" post_num="11"><img src="/static/comment.png"> <span class="comments-number">0</span> comments</span>
+                    </div>
+                </div>
+                <div class="post-date">May 20, 2024, 2:41 p.m.</div>
+            </div>
+            <div class="comment-post">
+                <h3>New comment</h3>
+                <div class="comment-post-inside">
+                    <textarea name="comment_text"></textarea>
+                    <button class="comment-button" post_num="11">Send</button>
+                </div>
+            </div>
+            <div class="comments-block"></div>
+        </div>
+        
+        
+    </div>
+</div>
+</div>
+    </div>
+</body>
+</html>
+
+HTTP Status: 200
+
+---
+
+=== Testing Profile ID: 11 ===
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/jquery-3.7.1.min.js"></script>
+    <script src="/static/script.js"></script>
+    <title>HackNet - phreaker</title>
+    <link rel="icon" type="image/png" href="/static/icon.png">
+</head>
+<body>
+    <div class="jp-title"><div class="scrollingtext">Cybersecurity Firm Hires Cat, Discovers It’s a Natural at Catching Bugs. Fluffy the feline becomes the company’s top debugger, proving purr-vasive in system security.</div></div>
+    <div id="container">
+        <nav><a href="/profile">Profile</a>
+<a href="/contacts">Contacts</a>
+<a href="/messages">Messages</a>
+<a href="/search">Search</a>
+<a href="/explore">Explore</a>
+<a href="/logout">Log out</a></nav>
+        <div id="content">
+<div id="profile">
+    <div id="profile-picture">
+        <img src="/media/11.png">
+    </div>
+    <div id="profile-info">
+        <h2>phreaker</h2>
+        <p>Old-school hacker with roots in phone phreaking. Now enjoys exploiting telecom systems and VoIP networks.</p>
+    </div>
+    <div id="profile-button">
+        <a href="/message/send/11">Send message</a>
+        
+        <a href="/contacts?action=request&userId=11">Request contact</a>
+        
+    </div>
+</div>
+<div id="posts">
+    <div id="post-list">
+        
+        <h2><img src="/static/lock.png"> <span>This user is private</span></h2>
+        
+    </div>
+</div>
+</div>
+    </div>
+</body>
+</html>
+
+HTTP Status: 200
+
+---
+
+=== Testing Profile ID: 12 ===
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/jquery-3.7.1.min.js"></script>
+    <script src="/static/script.js"></script>
+    <title>HackNet - codebreaker</title>
+    <link rel="icon" type="image/png" href="/static/icon.png">
+</head>
+<body>
+    <div class="jp-title"><div class="scrollingtext">Cybersecurity Firm Hires Cat, Discovers It’s a Natural at Catching Bugs. Fluffy the feline becomes the company’s top debugger, proving purr-vasive in system security.</div></div>
+    <div id="container">
+        <nav><a href="/profile">Profile</a>
+<a href="/contacts">Contacts</a>
+<a href="/messages">Messages</a>
+<a href="/search">Search</a>
+<a href="/explore">Explore</a>
+<a href="/logout">Log out</a></nav>
+        <div id="content">
+<div id="profile">
+    <div id="profile-picture">
+        <img src="/media/12.png">
+    </div>
+    <div id="profile-info">
+        <h2>codebreaker</h2>
+        <p>A programmer with a talent for writing malicious code and cracking software protections. Loves breaking encryption algorithms.</p>
+    </div>
+    <div id="profile-button">
+        <a href="/message/send/12">Send message</a>
+        
+        <a href="/contacts?action=request&userId=12">Request contact</a>
+        
+    </div>
+</div>
+<div id="posts">
+    <div id="post-list">
+        
+        <h2><img src="/static/lock.png"> <span>This user is private</span></h2>
+        
+    </div>
+</div>
+</div>
+    </div>
+</body>
+</html>
+
+HTTP Status: 200
+
+---
+
+=== Testing Profile ID: 13 ===
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/jquery-3.7.1.min.js"></script>
+    <script src="/static/script.js"></script>
+    <title>HackNet - netninja</title>
+    <link rel="icon" type="image/png" href="/static/icon.png">
+</head>
+<body>
+    <div class="jp-title"><div class="scrollingtext">AI Hacker Turns to Meditation, Accidentally Hacks Zen Garden. In a bid for inner peace, rogue AI rewires digital tranquility, creating chaos with virtual koi fish.</div></div>
+    <div id="container">
+        <nav><a href="/profile">Profile</a>
+<a href="/contacts">Contacts</a>
+<a href="/messages">Messages</a>
+<a href="/search">Search</a>
+<a href="/explore">Explore</a>
+<a href="/logout">Log out</a></nav>
+        <div id="content">
+<div id="profile">
+    <div id="profile-picture">
+        <img src="/media/13.png">
+    </div>
+    <div id="profile-info">
+        <h2>netninja</h2>
+        <p>Network security expert focused on intrusion detection and prevention. Known for slicing through firewalls with ease.</p>
+    </div>
+    <div id="profile-button">
+        <a href="/message/send/13">Send message</a>
+        
+        <a href="/contacts?action=request&userId=13">Request contact</a>
+        
+    </div>
+</div>
+<div id="posts">
+    <div id="post-list">
+        
+        
+        <h3>Posts</h3>
+        
+        <div class="hover-selection"></div>
+        
+        <div class="single-post">
+            <p class="post-text">Intrusion detection systems are only as good as the rules they’re based on. I’ve been tweaking some custom IDS rules to catch more sophisticated attacks. Managed to detect a few previously unknown attack vectors. Sharing the rule set for anyone interested.</p>
+            <div class="post-bottom">
+                <div class="post-buttons">
+                    <div class="post-likes">
+                        <div class="likes-review">
+                        </div>
+                        
+                        <span class="like" name="14"><img src="/static/like_empty.png"> <span>7</span></span> <span class="likes" post_num="14">likes</span>
+                        
+                    </div>
+                    <div class="post-comments">
+                        <span class="comment" post_num="14"><img src="/static/comment.png"> <span class="comments-number">0</span> comments</span>
+                    </div>
+                </div>
+                <div class="post-date">Dec. 23, 2024, 3:24 p.m.</div>
+            </div>
+            <div class="comment-post">
+                <h3>New comment</h3>
+                <div class="comment-post-inside">
+                    <textarea name="comment_text"></textarea>
+                    <button class="comment-button" post_num="14">Send</button>
+                </div>
+            </div>
+            <div class="comments-block"></div>
+        </div>
+        
+        <div class="single-post">
+            <p class="post-text">Network security is all about layers. I’ve been testing a multi-layered defense strategy on a corporate network, and so far, it’s holding up well against simulated attacks. Writing up my findings to share with the community—defense in depth is key.</p>
+            <div class="post-bottom">
+                <div class="post-buttons">
+                    <div class="post-likes">
+                        <div class="likes-review">
+                        </div>
+                        
+                        <span class="like" name="13"><img src="/static/like_empty.png"> <span>7</span></span> <span class="likes" post_num="13">likes</span>
+                        
+                    </div>
+                    <div class="post-comments">
+                        <span class="comment" post_num="13"><img src="/static/comment.png"> <span class="comments-number">0</span> comments</span>
+                    </div>
+                </div>
+                <div class="post-date">Aug. 1, 2024, 12:33 p.m.</div>
+            </div>
+            <div class="comment-post">
+                <h3>New comment</h3>
+                <div class="comment-post-inside">
+                    <textarea name="comment_text"></textarea>
+                    <button class="comment-button" post_num="13">Send</button>
+                </div>
+            </div>
+            <div class="comments-block"></div>
+        </div>
+        
+        
+    </div>
+</div>
+</div>
+    </div>
+</body>
+</html>
+
+HTTP Status: 200
+
+---
+
+=== Testing Profile ID: 14 ===
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/jquery-3.7.1.min.js"></script>
+    <script src="/static/script.js"></script>
+    <title>HackNet - packetpirate</title>
+    <link rel="icon" type="image/png" href="/static/icon.png">
+</head>
+<body>
+    <div class="jp-title"><div class="scrollingtext">AI Hacker Turns to Meditation, Accidentally Hacks Zen Garden. In a bid for inner peace, rogue AI rewires digital tranquility, creating chaos with virtual koi fish.</div></div>
+    <div id="container">
+        <nav><a href="/profile">Profile</a>
+<a href="/contacts">Contacts</a>
+<a href="/messages">Messages</a>
+<a href="/search">Search</a>
+<a href="/explore">Explore</a>
+<a href="/logout">Log out</a></nav>
+        <div id="content">
+<div id="profile">
+    <div id="profile-picture">
+        <img src="/media/14.png">
+    </div>
+    <div id="profile-info">
+        <h2>packetpirate</h2>
+        <p>A packet sniffer who loves capturing and analyzing network traffic. Always hunting for sensitive data in the ether.</p>
+    </div>
+    <div id="profile-button">
+        <a href="/message/send/14">Send message</a>
+        
+        <a href="/contacts?action=request&userId=14">Request contact</a>
+        
+    </div>
+</div>
+<div id="posts">
+    <div id="post-list">
+        
+        
+        <h3>Posts</h3>
+        
+        <div class="hover-selection"></div>
+        
+        <div class="single-post">
+            <p class="post-text">Captured some interesting packets from a poorly secured Wi-Fi network. Found a treasure trove of unencrypted data, including login credentials and private messages. It’s a reminder that encryption should be the default for all network communications.</p>
+            <div class="post-bottom">
+                <div class="post-buttons">
+                    <div class="post-likes">
+                        <div class="likes-review">
+                        </div>
+                        
+                        <span class="like" name="15"><img src="/static/like_empty.png"> <span>19</span></span> <span class="likes" post_num="15">likes</span>
+                        
+                    </div>
+                    <div class="post-comments">
+                        <span class="comment" post_num="15"><img src="/static/comment.png"> <span class="comments-number">3</span> comments</span>
+                    </div>
+                </div>
+                <div class="post-date">Dec. 8, 2024, 5:14 p.m.</div>
+            </div>
+            <div class="comment-post">
+                <h3>New comment</h3>
+                <div class="comment-post-inside">
+                    <textarea name="comment_text"></textarea>
+                    <button class="comment-button" post_num="15">Send</button>
+                </div>
+            </div>
+            <div class="comments-block"></div>
+        </div>
+        
+        
+    </div>
+</div>
+</div>
+    </div>
+</body>
+</html>
+
+HTTP Status: 200
+
+---
+
+=== Testing Profile ID: 15 ===
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/jquery-3.7.1.min.js"></script>
+    <script src="/static/script.js"></script>
+    <title>HackNet - darkseeker</title>
+    <link rel="icon" type="image/png" href="/static/icon.png">
+</head>
+<body>
+    <div class="jp-title"><div class="scrollingtext">Cybersecurity Firm Hires Cat, Discovers It’s a Natural at Catching Bugs. Fluffy the feline becomes the company’s top debugger, proving purr-vasive in system security.</div></div>
+    <div id="container">
+        <nav><a href="/profile">Profile</a>
+<a href="/contacts">Contacts</a>
+<a href="/messages">Messages</a>
+<a href="/search">Search</a>
+<a href="/explore">Explore</a>
+<a href="/logout">Log out</a></nav>
+        <div id="content">
+<div id="profile">
+    <div id="profile-picture">
+        <img src="/media/15.png">
+    </div>
+    <div id="profile-info">
+        <h2>darkseeker</h2>
+        <p>A hacker who thrives in the dark web. Specializes in anonymity tools and hidden service exploitation.</p>
+    </div>
+    <div id="profile-button">
+        <a href="/message/send/15">Send message</a>
+        
+        <a href="/contacts?action=request&userId=15">Request contact</a>
+        
+    </div>
+</div>
+<div id="posts">
+    <div id="post-list">
+        
+        
+        <h2>This user has no posts</h2>
+        
+        <div class="hover-selection"></div>
+        
+        
+    </div>
+</div>
+</div>
+    </div>
+</body>
+</html>
+
+HTTP Status: 200
+
+---
+
+=== Testing Profile ID: 16 ===
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/jquery-3.7.1.min.js"></script>
+    <script src="/static/script.js"></script>
+    <title>HackNet - shadowmancer</title>
+    <link rel="icon" type="image/png" href="/static/icon.png">
+</head>
+<body>
+    <div class="jp-title"><div class="scrollingtext">Hackers Accidentally Hack Themselves, Demand Ransom from Own Bank Accounts. In a comedic twist, cybercriminals lock themselves out of their own finances, begging customer service for mercy.</div></div>
+    <div id="container">
+        <nav><a href="/profile">Profile</a>
+<a href="/contacts">Contacts</a>
+<a href="/messages">Messages</a>
+<a href="/search">Search</a>
+<a href="/explore">Explore</a>
+<a href="/logout">Log out</a></nav>
+        <div id="content">
+<div id="profile">
+    <div id="profile-picture">
+        <img src="/media/16.png">
+    </div>
+    <div id="profile-info">
+        <h2>shadowmancer</h2>
+        <p>A master of disguise in the digital world, using cloaking techniques and evasion tactics to remain unseen.</p>
+    </div>
+    <div id="profile-button">
+        <a href="/message/send/16">Send message</a>
+        
+        <a href="/contacts?action=request&userId=16">Request contact</a>
+        
+    </div>
+</div>
+<div id="posts">
+    <div id="post-list">
+        
+        
+        <h3>Posts</h3>
+        
+        <div class="hover-selection"></div>
+        
+        <div class="single-post">
+            <p class="post-text">Cloaking techniques are evolving. I’ve been working on a new method to hide malicious traffic from intrusion detection systems. Early tests are promising—this could be a game-changer for stealth operations. More to come as I refine the technique.</p>
+            <div class="post-bottom">
+                <div class="post-buttons">
+                    <div class="post-likes">
+                        <div class="likes-review">
+                        </div>
+                        
+                        <span class="like" name="16"><img src="/static/like_empty.png"> <span>10</span></span> <span class="likes" post_num="16">likes</span>
+                        
+                    </div>
+                    <div class="post-comments">
+                        <span class="comment" post_num="16"><img src="/static/comment.png"> <span class="comments-number">0</span> comments</span>
+                    </div>
+                </div>
+                <div class="post-date">Sept. 7, 2024, 9:01 a.m.</div>
+            </div>
+            <div class="comment-post">
+                <h3>New comment</h3>
+                <div class="comment-post-inside">
+                    <textarea name="comment_text"></textarea>
+                    <button class="comment-button" post_num="16">Send</button>
+                </div>
+            </div>
+            <div class="comments-block"></div>
+        </div>
+        
+        
+    </div>
+</div>
+</div>
+    </div>
+</body>
+</html>
+
+HTTP Status: 200
+
+---
+
+=== Testing Profile ID: 17 ===
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/jquery-3.7.1.min.js"></script>
+    <script src="/static/script.js"></script>
+    <title>HackNet - trojanhorse</title>
+    <link rel="icon" type="image/png" href="/static/icon.png">
+</head>
+<body>
+    <div class="jp-title"><div class="scrollingtext">Hackers Accidentally Hack Themselves, Demand Ransom from Own Bank Accounts. In a comedic twist, cybercriminals lock themselves out of their own finances, begging customer service for mercy.</div></div>
+    <div id="container">
+        <nav><a href="/profile">Profile</a>
+<a href="/contacts">Contacts</a>
+<a href="/messages">Messages</a>
+<a href="/search">Search</a>
+<a href="/explore">Explore</a>
+<a href="/logout">Log out</a></nav>
+        <div id="content">
+<div id="profile">
+    <div id="profile-picture">
+        <img src="/media/17.jpg">
+    </div>
+    <div id="profile-info">
+        <h2>trojanhorse</h2>
+        <p>Malware developer with a focus on creating and deploying Trojan horses. Enjoys watching systems crumble from within.</p>
+    </div>
+    <div id="profile-button">
+        <a href="/message/send/17">Send message</a>
+        
+        <a href="/contacts?action=request&userId=17">Request contact</a>
+        
+    </div>
+</div>
+<div id="posts">
+    <div id="post-list">
+        
+        <h2><img src="/static/lock.png"> <span>This user is private</span></h2>
+        
+    </div>
+</div>
+</div>
+    </div>
+</body>
+</html>
+
+HTTP Status: 200
+
+---
+
+=== Testing Profile ID: 18 ===
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/jquery-3.7.1.min.js"></script>
+    <script src="/static/script.js"></script>
+    <title>HackNet - backdoor_bandit</title>
+    <link rel="icon" type="image/png" href="/static/icon.png">
+</head>
+<body>
+    <div class="jp-title"><div class="scrollingtext">New Virus Disguised as Tech Support Actually Fixes Computers. Confused users report unexpected improvements, as hackers accidentally deploy helpful malware.</div></div>
+    <div id="container">
+        <nav><a href="/profile">Profile</a>
+<a href="/contacts">Contacts</a>
+<a href="/messages">Messages</a>
+<a href="/search">Search</a>
+<a href="/explore">Explore</a>
+<a href="/logout">Log out</a></nav>
+        <div id="content">
+<div id="profile">
+    <div id="profile-picture">
+        <img src="/media/18.jpg">
+    </div>
+    <div id="profile-info">
+        <h2>backdoor_bandit</h2>
+        <p>Specializes in creating and exploiting backdoors in systems. Always leaves a way back in after an attack.</p>
+    </div>
+    <div id="profile-button">
+        <a href="/message/send/18">Send message</a>
+        
+        <a href="/contacts?action=request&userId=18">Request contact</a>
+        
+    </div>
+</div>
+<div id="posts">
+    <div id="post-list">
+        
+        <h2><img src="/static/lock.png"> <span>This user is private</span></h2>
+        
+    </div>
+</div>
+</div>
+    </div>
+</body>
+</html>
+
+HTTP Status: 200
+
+---
+
+=== Testing Profile ID: 19 ===
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/jquery-3.7.1.min.js"></script>
+    <script src="/static/script.js"></script>
+    <title>HackNet - exploit_wizard</title>
+    <link rel="icon" type="image/png" href="/static/icon.png">
+</head>
+<body>
+    <div class="jp-title"><div class="scrollingtext">New Virus Disguised as Tech Support Actually Fixes Computers. Confused users report unexpected improvements, as hackers accidentally deploy helpful malware.</div></div>
+    <div id="container">
+        <nav><a href="/profile">Profile</a>
+<a href="/contacts">Contacts</a>
+<a href="/messages">Messages</a>
+<a href="/search">Search</a>
+<a href="/explore">Explore</a>
+<a href="/logout">Log out</a></nav>
+        <div id="content">
+<div id="profile">
+    <div id="profile-picture">
+        <img src="/media/19.jpg">
+    </div>
+    <div id="profile-info">
+        <h2>exploit_wizard</h2>
+        <p>An expert in exploit development and vulnerability research. Loves crafting new ways to break into systems.</p>
+    </div>
+    <div id="profile-button">
+        <a href="/message/send/19">Send message</a>
+        
+        <a href="/contacts?action=request&userId=19">Request contact</a>
+        
+    </div>
+</div>
+<div id="posts">
+    <div id="post-list">
+        
+        
+        <h3>Posts</h3>
+        
+        <div class="hover-selection"></div>
+        
+        <div class="single-post">
+            <p class="post-text">Crafting exploits is a mix of creativity and technical skill. I’ve been working on a new exploit for a vulnerability in a popular web application. It’s taking longer than expected, but the results will be worth it. Writing up the details as I go.</p>
+            <div class="post-bottom">
+                <div class="post-buttons">
+                    <div class="post-likes">
+                        <div class="likes-review">
+                        </div>
+                        
+                        <span class="like" name="21"><img src="/static/like_empty.png"> <span>12</span></span> <span class="likes" post_num="21">likes</span>
+                        
+                    </div>
+                    <div class="post-comments">
+                        <span class="comment" post_num="21"><img src="/static/comment.png"> <span class="comments-number">1</span> comments</span>
+                    </div>
+                </div>
+                <div class="post-date">Sept. 14, 2024, 12:59 p.m.</div>
+            </div>
+            <div class="comment-post">
+                <h3>New comment</h3>
+                <div class="comment-post-inside">
+                    <textarea name="comment_text"></textarea>
+                    <button class="comment-button" post_num="21">Send</button>
+                </div>
+            </div>
+            <div class="comments-block"></div>
+        </div>
+        
+        
+    </div>
+</div>
+</div>
+    </div>
+</body>
+</html>
+
+HTTP Status: 200
+
+---
+
+=== Testing Profile ID: 20 ===
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/jquery-3.7.1.min.js"></script>
+    <script src="/static/script.js"></script>
+    <title>HackNet - stealth_hawk</title>
+    <link rel="icon" type="image/png" href="/static/icon.png">
+</head>
+<body>
+    <div class="jp-title"><div class="scrollingtext">Cybersecurity Firm Hires Cat, Discovers It’s a Natural at Catching Bugs. Fluffy the feline becomes the company’s top debugger, proving purr-vasive in system security.</div></div>
+    <div id="container">
+        <nav><a href="/profile">Profile</a>
+<a href="/contacts">Contacts</a>
+<a href="/messages">Messages</a>
+<a href="/search">Search</a>
+<a href="/explore">Explore</a>
+<a href="/logout">Log out</a></nav>
+        <div id="content">
+<div id="profile">
+    <div id="profile-picture">
+        <img src="/media/20.jpg">
+    </div>
+    <div id="profile-info">
+        <h2>stealth_hawk</h2>
+        <p>Focuses on stealth operations, avoiding detection while infiltrating systems. A ghost in the machine.</p>
+    </div>
+    <div id="profile-button">
+        <a href="/message/send/20">Send message</a>
+        
+        <a href="/contacts?action=request&userId=20">Request contact</a>
+        
+    </div>
+</div>
+<div id="posts">
+    <div id="post-list">
+        
+        
+        <h2>This user has no posts</h2>
+        
+        <div class="hover-selection"></div>
+        
+        
+    </div>
+</div>
+</div>
+    </div>
+</body>
+</html>
+
+HTTP Status: 200
+
+---
+

@@ -1,0 +1,65 @@
+Django SSTI (Server-Side Template Injection) Exploitation
+The Django part exploits a template injection vulnerability, but it's important to understand that Django's default template language (DTL) is more limited than Jinja2:
+Key Differences from Traditional SSTI:
+
+Django DTL doesn't execute Python expressions - {{7*7}} won't calculate to 49
+It only renders context variables - variables that are passed to the template
+You can leak data, but not execute commands directly (unlike Jinja2)
+
+The Attack Steps:
+1. Find the injection point:
+
+The username field gets rendered in the "likes" list
+When you change your username to {{ users }}, it renders the variable instead of literal text
+
+2. Leak user data:
+
+Change your username to {{ users.values }}
+Like various posts (IDs 1-30)
+View the likes list for each post
+The template renders the actual user database QuerySet with all fields including passwords
+
+Why This Works:
+
+The application passes a users QuerySet to the template context
+Django templates have access to model attributes and methods
+.values returns all database fields as a dictionary, including sensitive data like passwords
+The vulnerability is that user-controlled input (username) is rendered in a template context that has access to sensitive objects
+
+You change the username through the web application's profile/settings page. Here's how:
+Steps to Change Username:
+1. Log into the web application (http://hacknet.htb)
+
+Register a new account first if you haven't already
+
+
+2. Navigate to profile settings
+
+According to the writeup, you can modify personal information including:
+
+Name (username)
+Signature
+Upload avatar
+
+
+Look for an "Edit Profile" or "Settings" link after logging in
+
+3. Change your username field to the payload
+
+First try: {{ users }}
+Then try: {{ users.values }}
+
+4. Save the changes
+5. Trigger the template rendering
+
+Go like some posts/articles on the platform
+Then view the "likes" list for those posts
+Your "username" will be rendered in the likes list, and if the SSTI works, instead of showing "{{ users.values }}" as text, it will render the actual database query results
+
+6. Check the page source
+
+Right-click → View Page Source
+Look at the <img> tags with title attributes
+You should see the QuerySet output with user data there
+
+The key is that the username you set gets displayed in the likes list, and that's where the template injection happens. The application renders usernames without proper sanitization, so it interprets your Django template syntax.

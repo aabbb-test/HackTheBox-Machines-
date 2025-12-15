@@ -1,0 +1,19 @@
+[external-service-interaction] [http] [info] http://hacknet.htb
+[waf-detect:apachegeneric] [http] [info] http://hacknet.htb
+[waf-detect:nginxgeneric] [http] [info] http://hacknet.htb
+[ssh-auth-methods] [javascript] [info] hacknet.htb:22 ["["publickey","password"]"]
+[ssh-password-auth] [javascript] [info] hacknet.htb:22
+[ssh-sha1-hmac-algo] [javascript] [info] hacknet.htb:22
+[ssh-server-enumeration] [javascript] [info] hacknet.htb:22 ["SSH-2.0-OpenSSH_9.2p1 Debian-2+deb12u7"]
+[openssh-detect] [tcp] [info] hacknet.htb:22 ["SSH-2.0-OpenSSH_9.2p1 Debian-2+deb12u7"]
+[nginx-eol:version] [http] [info] http://hacknet.htb ["1.22.1"]
+[nginx-version] [http] [info] http://hacknet.htb ["nginx/1.22.1"]
+[http-missing-security-headers:permissions-policy] [http] [info] http://hacknet.htb
+[http-missing-security-headers:x-permitted-cross-domain-policies] [http] [info] http://hacknet.htb
+[http-missing-security-headers:clear-site-data] [http] [info] http://hacknet.htb
+[http-missing-security-headers:cross-origin-embedder-policy] [http] [info] http://hacknet.htb
+[http-missing-security-headers:cross-origin-resource-policy] [http] [info] http://hacknet.htb
+[http-missing-security-headers:strict-transport-security] [http] [info] http://hacknet.htb
+[http-missing-security-headers:content-security-policy] [http] [info] http://hacknet.htb
+[tech-detect:nginx] [http] [info] http://hacknet.htb
+[caa-fingerprint] [dns] [info] hacknet.htb
