@@ -1,0 +1,14 @@
+[tomcat-default-login] [http] [high] http://10.129.136.9:8080/manager/html [password="s3cret",username="tomcat"]
+[external-service-interaction] [http] [info] http://10.129.136.9:8080
+[external-service-interaction] [http] [info] http://10.129.136.9:8080
+[waf-detect:apachegeneric] [http] [info] http://10.129.136.9:8080
+[apache-detect] [http] [info] http://10.129.136.9:8080 ["Apache-Coyote/1.1"]
+[tomcat-detect:version] [http] [info] http://10.129.136.9:8080 ["7.0.88"]
+[apache-tomcat-manager-path-normalization] [http] [info] http://10.129.136.9:8080/36uskxc22zgXMahUr5jDxNUvdA3/..;/manager/html
+[public-tomcat-manager] [http] [info] http://10.129.136.9:8080/manager/html
+[tomcat-exposed] [http] [info] http://10.129.136.9:8080/host-manager/html
+[favicon-detect:apache-tomcat] [http] [info] http://10.129.136.9:8080/favicon.ico ["-297069493"]
+[tomcat-scripts] [http] [info] http://10.129.136.9:8080/examples/jsp/index.html
+[tomcat-scripts] [http] [info] http://10.129.136.9:8080/examples/websocket/index.xhtml
+[tomcat-scripts] [http] [info] http://10.129.136.9:8080/examples/servlets/servlet/SessionExample
+[tomcat-snoop-servlet-exposed] [http] [info] http://10.129.136.9:8080/examples/jsp/snp/snoop.jsp

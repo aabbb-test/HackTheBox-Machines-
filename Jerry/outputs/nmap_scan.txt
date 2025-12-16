@@ -1,0 +1,12 @@
+# Nmap 7.95 scan initiated Tue Dec 16 06:40:00 2025 as: /usr/lib/nmap/nmap -p- --min-rate=10000 -T5 -sCV -Pn -oN nmap_scan.txt 10.129.136.9
+Nmap scan report for 10.129.136.9
+Host is up (0.049s latency).
+Not shown: 65534 filtered tcp ports (no-response)
+PORT     STATE SERVICE VERSION
+8080/tcp open  http    Apache Tomcat/Coyote JSP engine 1.1
+|_http-title: Apache Tomcat/7.0.88
+|_http-favicon: Apache Tomcat
+|_http-server-header: Apache-Coyote/1.1
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Tue Dec 16 06:40:27 2025 -- 1 IP address (1 host up) scanned in 27.24 seconds
