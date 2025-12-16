@@ -1,0 +1,17 @@
+[external-service-interaction] [http] [info] http://10.129.229.26:55555
+[options-method] [http] [info] http://10.129.229.26:55555 ["GET, OPTIONS"]
+[request-baskets-exposure] [http] [low] http://10.129.229.26:55555/web
+[tech-detect:bootstrap] [http] [info] http://10.129.229.26:55555/web
+[tech-detect:font-awesome] [http] [info] http://10.129.229.26:55555/web
+[form-detection] [http] [info] http://10.129.229.26:55555/web
+[http-missing-security-headers:x-frame-options] [http] [info] http://10.129.229.26:55555/web
+[http-missing-security-headers:x-content-type-options] [http] [info] http://10.129.229.26:55555/web
+[http-missing-security-headers:x-permitted-cross-domain-policies] [http] [info] http://10.129.229.26:55555/web
+[http-missing-security-headers:clear-site-data] [http] [info] http://10.129.229.26:55555/web
+[http-missing-security-headers:cross-origin-embedder-policy] [http] [info] http://10.129.229.26:55555/web
+[http-missing-security-headers:cross-origin-opener-policy] [http] [info] http://10.129.229.26:55555/web
+[http-missing-security-headers:cross-origin-resource-policy] [http] [info] http://10.129.229.26:55555/web
+[http-missing-security-headers:strict-transport-security] [http] [info] http://10.129.229.26:55555/web
+[http-missing-security-headers:content-security-policy] [http] [info] http://10.129.229.26:55555/web
+[http-missing-security-headers:permissions-policy] [http] [info] http://10.129.229.26:55555/web
+[http-missing-security-headers:referrer-policy] [http] [info] http://10.129.229.26:55555/web
