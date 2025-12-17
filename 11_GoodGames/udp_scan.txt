@@ -1,0 +1,13 @@
+# Nmap 7.95 scan initiated Wed Dec 17 06:46:47 2025 as: /usr/lib/nmap/nmap -sU --top-ports 1000 --min-rate=5000 -oN udp_scan.txt 10.129.17.90
+Nmap scan report for 10.129.17.90
+Host is up (0.047s latency).
+Not shown: 994 open|filtered udp ports (no-response)
+PORT      STATE  SERVICE
+5000/udp  closed upnp
+8010/udp  closed unknown
+18807/udp closed unknown
+44253/udp closed unknown
+49190/udp closed unknown
+62699/udp closed unknown
+
+# Nmap done at Wed Dec 17 06:46:48 2025 -- 1 IP address (1 host up) scanned in 0.75 seconds

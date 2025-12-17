@@ -1,0 +1,12 @@
+# Nmap 7.95 scan initiated Wed Dec 17 07:13:44 2025 as: /usr/lib/nmap/nmap -p- --min-rate=10000 -T5 -sCV -Pn -oN nmap_scan.txt 10.129.16.238
+Warning: 10.129.16.238 giving up on port because retransmission cap hit (2).
+Nmap scan report for 10.129.16.238
+Host is up (0.052s latency).
+Not shown: 65534 closed tcp ports (reset)
+PORT   STATE SERVICE VERSION
+80/tcp open  http    Werkzeug httpd 2.0.2 (Python 3.9.2)
+|_http-title: GoodGames | Community and Store
+|_http-server-header: Werkzeug/2.0.2 Python/3.9.2
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Wed Dec 17 07:14:00 2025 -- 1 IP address (1 host up) scanned in 15.84 seconds
