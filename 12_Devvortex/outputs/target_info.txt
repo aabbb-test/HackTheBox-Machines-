@@ -1,0 +1,4 @@
+Machine: Devvortex
+IP: 10.129.17.235
+Difficulty: Easy
+OS: Linux (Ubuntu)

@@ -1,0 +1,29 @@
+[missing-sri] [http] [info] http://devvortex.htb ["https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js","https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css","https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700&display=swap"]
+[external-service-interaction] [http] [info] http://devvortex.htb
+[waf-detect:nginxgeneric] [http] [info] http://devvortex.htb
+[ssh-auth-methods] [javascript] [info] devvortex.htb:22 ["["publickey","password"]"]
+[ssh-sha1-hmac-algo] [javascript] [info] devvortex.htb:22
+[ssh-password-auth] [javascript] [info] devvortex.htb:22
+[ssh-server-enumeration] [javascript] [info] devvortex.htb:22 ["SSH-2.0-OpenSSH_8.2p1 Ubuntu-4ubuntu0.9"]
+[CVE-2023-48795] [javascript] [medium] devvortex.htb:22 ["Vulnerable to Terrapin"]
+[openssh-detect] [tcp] [info] devvortex.htb:22 ["SSH-2.0-OpenSSH_8.2p1 Ubuntu-4ubuntu0.9"]
+[nginx-eol:version] [http] [info] http://devvortex.htb ["1.18.0"]
+[nginx-version] [http] [info] http://devvortex.htb ["nginx/1.18.0"]
+[old-copyright] [http] [info] http://devvortex.htb ["&copy; 2020"]
+[http-missing-security-headers:cross-origin-embedder-policy] [http] [info] http://devvortex.htb
+[http-missing-security-headers:strict-transport-security] [http] [info] http://devvortex.htb
+[http-missing-security-headers:permissions-policy] [http] [info] http://devvortex.htb
+[http-missing-security-headers:x-content-type-options] [http] [info] http://devvortex.htb
+[http-missing-security-headers:x-permitted-cross-domain-policies] [http] [info] http://devvortex.htb
+[http-missing-security-headers:clear-site-data] [http] [info] http://devvortex.htb
+[http-missing-security-headers:cross-origin-opener-policy] [http] [info] http://devvortex.htb
+[http-missing-security-headers:cross-origin-resource-policy] [http] [info] http://devvortex.htb
+[http-missing-security-headers:content-security-policy] [http] [info] http://devvortex.htb
+[http-missing-security-headers:x-frame-options] [http] [info] http://devvortex.htb
+[http-missing-security-headers:referrer-policy] [http] [info] http://devvortex.htb
+[tech-detect:google-font-api] [http] [info] http://devvortex.htb
+[tech-detect:nginx] [http] [info] http://devvortex.htb
+[tech-detect:owl-carousel] [http] [info] http://devvortex.htb
+[tech-detect:bootstrap] [http] [info] http://devvortex.htb
+[form-detection] [http] [info] http://devvortex.htb
+[caa-fingerprint] [dns] [info] devvortex.htb
