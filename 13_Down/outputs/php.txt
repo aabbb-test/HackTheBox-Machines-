@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Is it down or just me?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <img src="/logo.png" alt="Logo">
+        <h2>Is it down or just me?</h2>
+    </header>
+
+    <div class="container">
+
+<h1>Is that website down, or is it just you?</h1>
+        <form id="urlForm" action="index.php" method="POST">
+            <input type="url" id="url" name="url" placeholder="Please enter a URL." required><br>
+            <button type="submit">Is it down?</button>
+        </form><div class="output" id="outputSection"><font size=+1>It is up. It's just you! 😝</font><br><br><p id="outputDetails"><pre>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Is it down or just me?&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;header&gt;
+        &lt;img src=&quot;/logo.png&quot; alt=&quot;Logo&quot;&gt;
+        &lt;h2&gt;Is it down or just me?&lt;/h2&gt;
+    &lt;/header&gt;
+
+    &lt;div class=&quot;container&quot;&gt;
+
+&lt;h1&gt;Is that website down, or is it just you?&lt;/h1&gt;
+        &lt;form id=&quot;urlForm&quot; action=&quot;index.php&quot; method=&quot;POST&quot;&gt;
+            &lt;input type=&quot;url&quot; id=&quot;url&quot; name=&quot;url&quot; placeholder=&quot;Please enter a URL.&quot; required&gt;&lt;br&gt;
+            &lt;button type=&quot;submit&quot;&gt;Is it down?&lt;/button&gt;
+        &lt;/form&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;footer&gt;© 2024 isitdownorjustme LLC&lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Is it down or just me?&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;header&gt;
+        &lt;img src=&quot;/logo.png&quot; alt=&quot;Logo&quot;&gt;
+        &lt;h2&gt;Is it down or just me?&lt;/h2&gt;
+    &lt;/header&gt;
+
+    &lt;div class=&quot;container&quot;&gt;
+
+&lt;?php
+if ( isset($_GET[&#039;expertmode&#039;]) &amp;&amp; $_GET[&#039;expertmode&#039;] === &#039;tcp&#039; ) {
+  echo &#039;&lt;h1&gt;Is the port refused, or is it just you?&lt;/h1&gt;
+        &lt;form id=&quot;urlForm&quot; action=&quot;index.php?expertmode=tcp&quot; method=&quot;POST&quot;&gt;
+            &lt;input type=&quot;text&quot; id=&quot;url&quot; name=&quot;ip&quot; placeholder=&quot;Please enter an IP.&quot; required&gt;&lt;br&gt;
+            &lt;input type=&quot;number&quot; id=&quot;port&quot; name=&quot;port&quot; placeholder=&quot;Please enter a port number.&quot; required&gt;&lt;br&gt;
+            &lt;button type=&quot;submit&quot;&gt;Is it refused?&lt;/button&gt;
+        &lt;/form&gt;&#039;;
+} else {
+  echo &#039;&lt;h1&gt;Is that website down, or is it just you?&lt;/h1&gt;
+        &lt;form id=&quot;urlForm&quot; action=&quot;index.php&quot; method=&quot;POST&quot;&gt;
+            &lt;input type=&quot;url&quot; id=&quot;url&quot; name=&quot;url&quot; placeholder=&quot;Please enter a URL.&quot; required&gt;&lt;br&gt;
+            &lt;button type=&quot;submit&quot;&gt;Is it down?&lt;/button&gt;
+        &lt;/form&gt;&#039;;
+}
+
+if ( isset($_GET[&#039;expertmode&#039;]) &amp;&amp; $_GET[&#039;expertmode&#039;] === &#039;tcp&#039; &amp;&amp; isset($_POST[&#039;ip&#039;]) &amp;&amp; isset($_POST[&#039;port&#039;]) ) {
+  $ip = trim($_POST[&#039;ip&#039;]);
+  $valid_ip = filter_var($ip, FILTER_VALIDATE_IP);
+  $port = trim($_POST[&#039;port&#039;]);
+  $port_int = intval($port);
+  $valid_port = filter_var($port_int, FILTER_VALIDATE_INT);
+  if ( $valid_ip &amp;&amp; $valid_port ) {
+    $rc = 255; $output = &#039;&#039;;
+    $ec = escapeshellcmd(&quot;/usr/bin/nc -vz $ip $port&quot;);
+    exec($ec . &quot; 2&gt;&amp;1&quot;,$output,$rc);
+    echo &#039;&lt;div class=&quot;output&quot; id=&quot;outputSection&quot;&gt;&#039;;
+    if ( $rc === 0 ) {
+      echo &quot;&lt;font size=+1&gt;It is up. It&#039;s just you! 😝&lt;/font&gt;&lt;br&gt;&lt;br&gt;&quot;;
+      echo &#039;&lt;p id=&quot;outputDetails&quot;&gt;&lt;pre&gt;&#039;.htmlspecialchars(implode(&quot;\n&quot;,$output)).&#039;&lt;/pre&gt;&lt;/p&gt;&#039;;
+    } else {
+      echo &quot;&lt;font size=+1&gt;It is down for everyone! 😔&lt;/font&gt;&lt;br&gt;&lt;br&gt;&quot;;
+      echo &#039;&lt;p id=&quot;outputDetails&quot;&gt;&lt;pre&gt;&#039;.htmlspecialchars(implode(&quot;\n&quot;,$output)).&#039;&lt;/pre&gt;&lt;/p&gt;&#039;;
+    }
+  } else {
+    echo &#039;&lt;div class=&quot;output&quot; id=&quot;outputSection&quot;&gt;&#039;;
+    echo &#039;&lt;font color=red size=+1&gt;Please specify a correct IP and a port between 1 and 65535.&lt;/font&gt;&#039;;
+  }
+} elseif (isset($_POST[&#039;url&#039;])) {
+  $url = trim($_POST[&#039;url&#039;]);
+  if ( preg_match(&#039;|^https?://|&#039;,$url) ) {
+    $rc = 255; $output = &#039;&#039;;
+    $ec = escapeshellcmd(&quot;/usr/bin/curl -s $url&quot;);
+    exec($ec . &quot; 2&gt;&amp;1&quot;,$output,$rc);
+    echo &#039;&lt;div class=&quot;output&quot; id=&quot;outputSection&quot;&gt;&#039;;
+    if ( $rc === 0 ) {
+      echo &quot;&lt;font size=+1&gt;It is up. It&#039;s just you! 😝&lt;/font&gt;&lt;br&gt;&lt;br&gt;&quot;;
+      echo &#039;&lt;p id=&quot;outputDetails&quot;&gt;&lt;pre&gt;&#039;.htmlspecialchars(implode(&quot;\n&quot;,$output)).&#039;&lt;/pre&gt;&lt;/p&gt;&#039;;
+    } else {
+      echo &quot;&lt;font size=+1&gt;It is down for everyone! 😔&lt;/font&gt;&lt;br&gt;&lt;br&gt;&quot;;
+    }
+  } else {
+    echo &#039;&lt;div class=&quot;output&quot; id=&quot;outputSection&quot;&gt;&#039;;
+    echo &#039;&lt;font color=red size=+1&gt;Only protocols http or https allowed.&lt;/font&gt;&#039;;
+  }
+}
+?&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;footer&gt;© 2024 isitdownorjustme LLC&lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></p>
+</div>
+</div>
+<footer>© 2024 isitdownorjustme LLC</footer>
+</body>
+</html>
