@@ -1,0 +1,341 @@
+Configuration {
+    kind: "configuration",
+    wordlist: "/usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt",
+    config: "/etc/feroxbuster/ferox-config.toml",
+    proxy: "",
+    replay_proxy: "",
+    server_certs: [],
+    client_cert: "",
+    client_key: "",
+    target_url: "http://gavel.htb/",
+    status_codes: [
+        100,
+        101,
+        102,
+        200,
+        201,
+        202,
+        203,
+        204,
+        205,
+        206,
+        207,
+        208,
+        226,
+        300,
+        301,
+        302,
+        303,
+        304,
+        305,
+        307,
+        308,
+        400,
+        401,
+        402,
+        403,
+        404,
+        405,
+        406,
+        407,
+        408,
+        409,
+        410,
+        411,
+        412,
+        413,
+        414,
+        415,
+        416,
+        417,
+        418,
+        421,
+        422,
+        423,
+        424,
+        426,
+        428,
+        429,
+        431,
+        451,
+        500,
+        501,
+        502,
+        503,
+        504,
+        505,
+        506,
+        507,
+        508,
+        510,
+        511,
+        103,
+        425,
+    ],
+    replay_codes: [
+        100,
+        101,
+        102,
+        200,
+        201,
+        202,
+        203,
+        204,
+        205,
+        206,
+        207,
+        208,
+        226,
+        300,
+        301,
+        302,
+        303,
+        304,
+        305,
+        307,
+        308,
+        400,
+        401,
+        402,
+        403,
+        404,
+        405,
+        406,
+        407,
+        408,
+        409,
+        410,
+        411,
+        412,
+        413,
+        414,
+        415,
+        416,
+        417,
+        418,
+        421,
+        422,
+        423,
+        424,
+        426,
+        428,
+        429,
+        431,
+        451,
+        500,
+        501,
+        502,
+        503,
+        504,
+        505,
+        506,
+        507,
+        508,
+        510,
+        511,
+        103,
+        425,
+    ],
+    filter_status: [],
+    client: Client {
+        accepts: Accepts,
+        proxies: [
+            Matcher,
+        ],
+        redirect_policy: "Policy(None)",
+        referer: true,
+        default_headers: {
+            "accept": "*/*",
+            "user-agent": "feroxbuster/2.13.0",
+        },
+        reqwest::config::RequestTimeout: 7s,
+    },
+    replay_client: None,
+    threads: 50,
+    timeout: 7,
+    verbosity: 0,
+    silent: false,
+    quiet: false,
+    output_level: Default,
+    auto_bail: false,
+    auto_tune: false,
+    requester_policy: Default,
+    json: false,
+    output: "feroxbuster_scan.txt",
+    debug_log: "",
+    user_agent: "feroxbuster/2.13.0",
+    random_agent: false,
+    redirects: false,
+    insecure: false,
+    extensions: [
+        "php",
+        "html",
+        "txt",
+        "js",
+    ],
+    methods: [
+        "GET",
+    ],
+    data: [],
+    headers: {},
+    queries: [],
+    no_recursion: false,
+    extract_links: true,
+    add_slash: false,
+    stdin: false,
+    cached_stdin: [],
+    depth: 4,
+    scan_limit: 0,
+    parallel: 0,
+    rate_limit: 0,
+    filter_size: [],
+    filter_line_count: [],
+    filter_word_count: [],
+    filter_regex: [],
+    dont_filter: false,
+    resumed: false,
+    resume_from: "",
+    save_state: true,
+    time_limit: "",
+    filter_similar: [],
+    url_denylist: [],
+    regex_denylist: [],
+    scope: [
+        Url {
+            scheme: "http",
+            cannot_be_a_base: false,
+            username: "",
+            password: None,
+            host: Some(
+                Domain(
+                    "gavel.htb",
+                ),
+            ),
+            port: None,
+            path: "/",
+            query: None,
+            fragment: None,
+        },
+    ],
+    collect_extensions: false,
+    dont_collect: [
+        "tif",
+        "tiff",
+        "ico",
+        "cur",
+        "bmp",
+        "webp",
+        "svg",
+        "png",
+        "jpg",
+        "jpeg",
+        "jfif",
+        "gif",
+        "avif",
+        "apng",
+        "pjpeg",
+        "pjp",
+        "mov",
+        "wav",
+        "mpg",
+        "mpeg",
+        "mp3",
+        "mp4",
+        "m4a",
+        "m4p",
+        "m4v",
+        "ogg",
+        "webm",
+        "ogv",
+        "oga",
+        "flac",
+        "aac",
+        "3gp",
+        "css",
+        "zip",
+        "xls",
+        "xml",
+        "gz",
+        "tgz",
+    ],
+    collect_backups: false,
+    backup_extensions: [
+        "~",
+        ".bak",
+        ".bak2",
+        ".old",
+        ".1",
+    ],
+    collect_words: false,
+    force_recursion: false,
+    update_app: false,
+    scan_dir_listings: false,
+    request_file: "",
+    protocol: "https",
+    limit_bars: 0,
+    unique: false,
+    response_size_limit: 4194304,
+}
+200      GET       84l      301w     4485c http://gavel.htb/register.php
+200      GET       78l      213w     4281c http://gavel.htb/login.php
+200      GET        7l       33w     1265c http://gavel.htb/assets/js/sb-admin-2.min.js
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://gavel.htb/assets/js/ (Apache)
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://gavel.htb/assets/css/ (Apache)
+200      GET      222l     1042w    14058c http://gavel.htb/index.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://gavel.htb/assets/ (Apache)
+200      GET        2l     1294w    89501c http://gavel.htb/assets/vendor/jquery/jquery.min.js
+200      GET        5l       83w    59344c http://gavel.htb/assets/vendor/fontawesome-free/css/all.min.css
+200      GET      276l     1356w   153886c http://gavel.htb/assets/img/spoon.jpg
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://gavel.htb/assets/img (Apache)
+200      GET      324l     2559w   196986c http://gavel.htb/assets/img/scroll.jpg
+200      GET      423l     1396w   179553c http://gavel.htb/assets/img/shard.jpg
+200      GET      243l     1057w   158209c http://gavel.htb/assets/img/juice.jpg
+200      GET      278l     3024w   230643c http://gavel.htb/assets/img/helmet.jpg
+200      GET    11299l    22157w   212581c http://gavel.htb/assets/css/sb-admin-2.css
+200      GET        7l     1030w    84378c http://gavel.htb/assets/vendor/bootstrap/js/bootstrap.bundle.min.js
+200      GET      266l     1319w   187333c http://gavel.htb/assets/img/certificate.jpg
+200      GET      227l     1130w   149461c http://gavel.htb/assets/img/goblet.jpg
+200      GET      679l     3782w   301740c http://gavel.htb/assets/img/favicon.ico
+200      GET      268l      938w   145788c http://gavel.htb/assets/img/speed.jpg
+200      GET      390l     1652w   191576c http://gavel.htb/assets/img/employment.jpg
+200      GET      196l     1157w   164627c http://gavel.htb/assets/img/tax.jpg
+200      GET      414l     3207w   260539c http://gavel.htb/assets/img/key.jpg
+200      GET      308l     1199w   128350c http://gavel.htb/assets/img/luck.jpg
+200      GET      365l     1202w   141649c http://gavel.htb/assets/img/library.jpg
+200      GET      337l     2779w   199415c http://gavel.htb/assets/img/cloak.jpg
+200      GET      418l     3176w   243625c http://gavel.htb/assets/img/NDA.jpg
+302      GET        0l        0w        0c http://gavel.htb/admin.php => index.php
+200      GET     4422l    25758w  1976010c http://gavel.htb/assets/img/welcome.png
+301      GET        9l       28w      307c http://gavel.htb/assets => http://gavel.htb/assets/
+200      GET        1l       44w     2532c http://gavel.htb/assets/vendor/jquery-easing/jquery.easing.min.js
+200      GET      222l     1048w    14099c http://gavel.htb/
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://gavel.htb/assets/vendor/bootstrap/ (Apache)
+200      GET     5229l    29085w  2344711c http://gavel.htb/assets/img/ring.jpg
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://gavel.htb/assets/vendor/jquery/ (Apache)
+200      GET        2l     1059w    72372c http://gavel.htb/assets/vendor/jquery/jquery.slim.min.js
+200      GET        1l        2w   110315c http://gavel.htb/assets/vendor/jquery/jquery.slim.min.map
+200      GET        1l        7w   137960c http://gavel.htb/assets/vendor/jquery/jquery.min.map
+200      GET    10881l    44400w   288580c http://gavel.htb/assets/vendor/jquery/jquery.js
+200      GET     6403l    37336w  3281525c http://gavel.htb/assets/img/toe.jpg
+200      GET     8782l    36235w   235341c http://gavel.htb/assets/vendor/jquery/jquery.slim.js
+301      GET        9l       28w      306c http://gavel.htb/rules => http://gavel.htb/rules/
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://gavel.htb/assets/vendor/jquery-easing/ (Apache)
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://gavel.htb/assets/vendor/ (Apache)
+200      GET       59l      254w     1656c http://gavel.htb/assets/vendor/jquery-easing/jquery.easing.compatibility.js
+200      GET      102l      397w     3798c http://gavel.htb/assets/items.json
+200      GET      166l      953w     4047c http://gavel.htb/assets/vendor/jquery-easing/jquery.easing.js
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://gavel.htb/assets/vendor/fontawesome-free/ (Apache)
+200      GET        3l       23w      187c http://gavel.htb/assets/vendor/fontawesome-free/attribution.js
+200      GET       58l      108w     1274c http://gavel.htb/assets/vendor/fontawesome-free/package.json
+200      GET       34l      237w     1548c http://gavel.htb/assets/vendor/fontawesome-free/LICENSE.txt
+301      GET        9l       28w      309c http://gavel.htb/includes => http://gavel.htb/includes/
+200      GET      120l      382w    70041c http://gavel.htb/assets/img/robe.jpg
+200      GET      307l     1324w   164612c http://gavel.htb/assets/img/quill.jpg
+200      GET      398l     1583w   182591c http://gavel.htb/assets/img/permit.jpg
+302      GET        0l        0w        0c http://gavel.htb/logout.php => index.php
+200      GET        0l        0w        0c http://gavel.htb/includes/db.php
+200      GET        0l        0w        0c http://gavel.htb/includes/config.php
+200      GET        0l        0w        0c http://gavel.htb/includes/auction.php
+302      GET        0l        0w        0c http://gavel.htb/inventory.php => index.php
+200      GET        0l        0w        0c http://gavel.htb/includes/session.php
+302      GET        0l        0w        0c http://gavel.htb/bidding.php => index.php

